@@ -4,23 +4,23 @@ const configuration = {
   // the name of your website
   title: 'Ben Church',
   // the description of the website (eg. what shows on Google)
-  description: "Ben Church's blog",
+  description: "A collection of short tutorials and stories on building great products for great companies.",
   // a short bio shown at the bottom of your blog posts
   // It should complete the sentence: Written by Ben Church ...
   shortBio: '',
   // a longer bio showing on the landing page of the blog
   bio: `Building Great Products for Amazing companies 👨‍💻🚀 || Remote Engineering Lead || @bnchrch on twitter || https://ben.church || https://github.com/bechurch.`,
   author: 'Ben Church',
-  githubUrl: 'https://github.com/bechurch/writting',
+  githubUrl: 'https://github.com/bechurch/writing',
   // replace this by the url where your website will be published
-  siteUrl: 'http://localhost:8000',
+  siteUrl: 'https://by.ben.church',
   social: {
     // leave the social media you do not want to appear as empty strings
     twitter: 'bnchrch',
     medium: '@bnchrch',
     facebook: '',
-    github: '',
-    linkedin: '',
+    github: 'https://www.github.com/bechurch',
+    linkedin: 'https://www.linkedin.com/in/bnchrch/',
     instagram: '',
   },
 }
