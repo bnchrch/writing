@@ -19,8 +19,8 @@ const configuration = {
     twitter: 'bnchrch',
     medium: '@bnchrch',
     facebook: '',
-    github: 'https://www.github.com/bechurch',
-    linkedin: 'https://www.linkedin.com/in/bnchrch/',
+    github: 'bechurch',
+    linkedin: 'bnchrch',
     instagram: '',
   },
 }
