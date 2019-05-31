@@ -12,7 +12,7 @@ import './blog-listing.css'
 
 const BlogIndexPage = ({ data: { allMdx } }) => (
   <Layout>
-    <SEO title="Mathieu Dutour - Blog" keywords={[]} />
+    <SEO title="By Ben Church" keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']} />
     <Section centered>
       <MainBio />
     </Section>
