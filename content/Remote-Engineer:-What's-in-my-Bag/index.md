@@ -2,7 +2,7 @@
 title: "Remote Engineer: What’s in my Bag"
 description: "Not one to hide this opinion: I am a huge fan of remote work! I’m very vocal about my belief that this trend towards more distributed workplaces has no choice but to continue. However I’m not naive…"
 date: "2018-05-04T13:01:05.432Z"
-categories: 
+categories:
   - Productivity
   - Travel
   - Software Development
@@ -162,13 +162,3 @@ If I have any parting words it would be:
 > ❤️ If you like what you read [follow me on Twitter](https://twitter.com/bnchrch)
 
 > 🐙 If your interested in development [follow me on Github](https://github.com/bechurch)
-
----
-
-[![](./asset-4.png)](https://medium.com/swlh)
-
-#### This story is published in [The Startup](https://medium.com/swlh), Medium’s largest entrepreneurship publication followed by 321,672+ people.
-
-#### Subscribe to receive [our top stories here](http://growthsupply.com/the-startup-newsletter/).
-
-[![](./asset-5.png)](https://medium.com/swlh)

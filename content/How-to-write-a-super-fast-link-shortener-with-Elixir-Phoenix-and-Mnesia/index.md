@@ -2,7 +2,7 @@
 title: "How to write a super fast link shortener with Elixir, Phoenix, and Mnesia"
 description: "Elixir, the Phoenix framework, and the Erlang VM allows us to make production ready systems fast, easily, and with very few moving parts. At this point, you can see where we’re going with this. Let’s…"
 date: "2018-09-18T21:49:29.826Z"
-categories: 
+categories:
   - Web Development
   - Software Development
   - Programming
@@ -47,7 +47,23 @@ mix phx.new shorten_api --no-html --no-brunch
 
 Next, we're going to add a few dependencies to `mix.exs`. Go ahead and update the `deps/0` function in that file to look like this:
 
-Embed placeholder 0.4793833353087493
+```elixir
+# mix.exs
+
+# ...
+defp deps do
+  [
+    {:phoenix, "~> 1.3.2"},
+    {:phoenix_pubsub, "~> 1.0"},
+    {:phoenix_ecto, "~> 3.2"},
+    {:postgrex, ">= 0.0.0"},
+    {:gettext, "~> 0.11"},
+    {:cowboy, "~> 1.0"},
+    {:ecto_mnesia, "~> 0.9.1"}
+  ]
+end
+# ...
+```
 
 ### Logic!
 
@@ -87,6 +103,61 @@ _Ecto makes this really easy._
 
 The first thing to do is make a custom Ecto Type which will handle all of this for us. Create a new file `shorten_api/ecto/hash_id.ex` and populate it as follows:
 
+```elixir
+# shorten_api/ecto/hash_id.ex
+defmodule ShortenApi.Ecto.HashId do
+  @behaviour Ecto.Type
+  @hash_id_length 8
+  # ======================= #
+  # Ecto Specific Callbacks #
+  # ======================= #
+
+  @doc "Called when creating an Ecto.Changeset"
+  @spec cast(any) :: Map.t
+  def cast(value), do: hash_id_format(value)
+
+  @doc "Converts/accepts a value that has been directly placed into the ecto struct after a changeset"
+  @spec dump(any) :: Map.t
+  def dump(value), do: hash_id_format(value)
+
+  @doc "Converts a value from the database into the HashId type"
+  @spec load(any) :: Map.t
+  def load(value), do: hash_id_format(value)
+
+  @doc "Callback invoked by autogenerate fields."
+  @spec autogenerate() :: String.t
+  def autogenerate, do: generate()
+
+  @doc "The Ecto type."
+  def type, do: :string
+
+  # ============ #
+  # Custom Logic #
+  # ============ #
+
+  @spec hash_id_format(any) :: Map.t
+  def hash_id_format(value) do
+    case validate_hash_id(value) do
+      true -> {:ok, value}
+      _ -> {:error, "'#{value}' is not a string"}
+    end
+  end
+
+  @doc "Validate the given value as a string"
+  def validate_hash_id(string) when is_binary(string), do: true
+  def validate_hash_id(other), do: false
+
+  @doc "Generates a HashId"
+  @spec generate() :: String.t
+  def generate do
+    @hash_id_length
+    |> :crypto.strong_rand_bytes()
+    |> Base.url_encode64
+    |> binary_part(0, @hash_id_length)
+  end
+end
+```
+
 Don’t worry if you don’t understand all of this, it’s a little more advanced…
 
 What we did above is essentially create a new type that can be used the same way we define a field as a `String` or an `Integer`. Now we can define a field as a `HashId`.
@@ -95,11 +166,53 @@ What we did above is essentially create a new type that can be used the same way
 
 So let's do just that and update `shorten_api/links/link.ex` to use a `HashId` as it’s a primary key instead of an `Integer`:
 
+```elixir
+# shorten_api/links/link.ex
+defmodule ShortenApi.Links.Link do
+  use Ecto.Schema
+  import Ecto.Changeset
+  alias ShortenApi.Ecto.HashId
+
+  @primary_key {:hash, HashId, [autogenerate: true]}
+  @derive {Phoenix.Param, key: :hash}
+  schema "links" do
+    field :url, :string
+
+    timestamps()
+  end
+
+  @doc false
+  def changeset(link, attrs) do
+    link
+    |> cast(attrs, [:url])
+    |> validate_required([:url])
+  end
+end
+```
+
 Simple!
 
 #### Update the migration
 
 Now that the `HashId` is setup in our code, we want to update the migration to set up the database to reflect what's happening in our model file. You should have a file in your project that ends with `_create_links.exs` . Find it, open it and modify it to resemble the below code:
+
+```elixir
+# 20180806064709_create_links.exs
+defmodule ShortenApi.Repo.Migrations.CreateLinks do
+  use Ecto.Migration
+
+  def change do
+    create table(:links, primary_key: false) do
+      add :hash, :string, primary_key: true
+      add :url, :string
+
+      timestamps()
+    end
+
+    create unique_index(:links, [:url])
+  end
+end
+```
 
 Note we are telling Ecto to use a different field as the primary key.
 
@@ -114,6 +227,19 @@ First, we need a function in our controller that
 3.  Redirects to the `URL` attached to that `Link`
 
 To do this, let's add a new function to our link controller found here: `shorten_api_web/controllers/link_controller.ex`
+```elixir
+# shorten_api_web/controllers/link_controller.ex
+# ...
+
+def get_and_redirect(conn, %{"id" => id}) do
+  url = id
+    |> Links.get_link!()
+    |> Map.get(:url)
+  redirect(conn, external: url)
+end
+
+# ...
+```
 
 Doesn’t Phoenix and Elixir make this so so pretty? 😍
 
@@ -123,7 +249,25 @@ Now that we have this new controller function, the only thing left is to hook it
 
 > Note: we will also be adding the routes to `mix phx.gen` suggested earlier
 
-Embed placeholder 0.13256799883307524
+```elixir
+# router.ex
+defmodule ShortenApiWeb.Router do
+  use ShortenApiWeb, :router
+
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/api", ShortenApiWeb do
+    pipe_through :api
+    resources "/links", LinkController, except: [:edit]
+  end
+
+  scope "/", ShortenApiWeb do
+    get "/:id", LinkController, :get_and_redirect
+  end
+end
+```
 
 ### TADA! 🎉
 
@@ -141,13 +285,27 @@ In the next section, we’re going to alter our configuration to use Mnesia inst
 
 This process is actually very simple. First update `config.exs` as shown:
 
-Embed placeholder 0.09378540703192106
+```elixir
+# config.exs
+# ...
+# Configure your database
+config :shorten_api, ShortenApi.Repo,
+  adapter: EctoMnesia.Adapter
+
+config :ecto_mnesia,
+  host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
+  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_copies}
+
+config :mnesia,
+  dir: 'priv/data/mnesia'
+# ...
+```
 
 #### Create your Mnesia database
 
 Then create the location where Mnesia will back data up to and initialize the database through Ecto:
 
-```
+```bash
 mkdir priv/data
 mkdir priv/data/mnesia
 mix ecto.create
@@ -160,13 +318,11 @@ mix ecto.migrate
 
 You now can
 
-1.  start the project (again for many of you):
+1.  start the project: `mix phx.server`
 
-`mix phx.server`
+2. Create a shortened link via `curl`:
 
-2\. Create a shortened link via `curl`:
-
-```
+```bash
 curl --request POST \
   --url http://localhost:4000/api/links/ \
   --header 'content-type: application/json' \
@@ -177,11 +333,11 @@ curl --request POST \
 }'
 ```
 
-3\. Take the `hash` returned in the response
+3. Take the `hash` returned in the response
 
 `{“data”:{“url”:”[https://twitter.com/bnchrch](https://twitter.com/bnchrch)","hash":"7cJY_ckq"}}`
 
-4\. And be redirected appropriately when you go to `localhost:4000/{hash}`:
+4. And be redirected appropriately when you go to `localhost:4000/{hash}`:
 
 ![](./asset-2.gif)
 
