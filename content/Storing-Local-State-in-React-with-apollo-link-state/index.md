@@ -2,7 +2,7 @@
 title: "Storing Local State in React with apollo-link-state"
 description: "GraphQL and its ecosystem are awesome and Apollo makes using it a pleasure. If you are writing a javascript application today I can’t stress enough how much simpler these two technologies will make…"
 date: "2018-04-23T00:05:38.418Z"
-categories: 
+categories:
   - React
   - GraphQL
   - Apollo
@@ -33,15 +33,15 @@ By the end of this tutorial you will have:
 
 Please make sure you have the following installed and/or ready to go:
 
-1.  Node
-2.  Npm
-3.  [Yarn](https://yarnpkg.com/en/)
+1. Node
+2. Npm
+3. [Yarn](https://yarnpkg.com/en/)
 
 #### Initialize the project
 
 First before we can dive into Apollo we need a React App to use it with so lets create a React project called `link_state_demo` using `create-react-app`.
 
-```
+```bash
 # Download Create React App
 yarn global add create-react-app
 
@@ -56,7 +56,7 @@ cd link_state_demo
 
 Next we want to add `apollo`, `apollo-link-state`, `recompose` and `lodash` among other supporting libraries.
 
-```
+```bash
 yarn add apollo-boost apollo-client-preset apollo-link-state react-apollo graphql-tag graphql lodash recompose
 ```
 
@@ -64,7 +64,7 @@ yarn add apollo-boost apollo-client-preset apollo-link-state react-apollo graphq
 
 It’s that simple, now we can just start our dev server and go!
 
-```
+```bash
 yarn start
 ```
 
@@ -87,7 +87,27 @@ _Though these are opinions and not required for using this demo!_
 
 To change over to using stateless components is as easy as copying the code below to your `app.js` file:
 
-Embed placeholder 0.1405277058126988
+```jsx
+// app.js
+import React from 'react';
+
+import logo from './logo.svg';
+import './App.css';
+
+const Header = () => (
+  <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <h1 className="App-title">Apollo Link State Demo</h1>
+  </header>);
+
+const App = () => (
+  <div className="App">
+    <Header/>
+  </div>
+);
+
+export default App;
+```
 
 ### Setup the Apollo Client
 
@@ -97,13 +117,47 @@ To begin we will have to set up our Apollo client. This is fairly simple and wil
 
 Open `index.js` and wrap `<App/>` in Apollo’s `ApolloProvider`.
 
-Embed placeholder 0.9829136098137738
+```jsx
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import {ApolloProvider} from 'react-apollo';
+import {Client} from './Client';
+
+const Root = () => (
+  <ApolloProvider  client={Client}>
+    <App />
+  </ApolloProvider>);
+
+ReactDOM.render(<Root />, document.getElementById('root'));
+registerServiceWorker();
+```
 
 #### Setup the ApolloClient
 
 Create a new file named `Client.js` and initialize the cache and the `ApolloClient`
 
-Embed placeholder 0.6480453154390855
+```jsx
+// Client.js
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {ApolloLink} from 'apollo-client-preset';
+import {ApolloClient} from 'apollo-client';
+
+// Set up Cache
+const cache = new InMemoryCache();
+
+// Initialize the Apollo Client
+const Client = new ApolloClient({
+  link: ApolloLink.from([]),
+  cache: cache,
+});
+
+export {Client};
+```
 
 ### Setup State logic that will support a To-Do List
 
@@ -152,7 +206,118 @@ Here we’ve created a Higher Order Component to help give a child component acc
 
 **What this all looks like**
 
-Embed placeholder 0.17700122416606834
+```jsx
+// Client.js
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {ApolloLink} from 'apollo-client-preset';
+import {ApolloClient} from 'apollo-client';
+import {withClientState} from 'apollo-link-state';
+import gql from 'graphql-tag';
+import {graphql} from 'react-apollo';
+import compose from 'recompose/compose';
+
+/*
+  Defaults
+*/
+
+const todoDefaults = {
+  currentTodos: [],
+};
+
+/*
+  GraphQL
+*/
+
+const todoQuery = gql`
+  query GetTodo {
+    currentTodos @client
+  }
+`;
+
+const clearTodoQuery = gql`
+  mutation clearTodo {
+    clearTodo @client
+  }
+`;
+
+const addTodoQuery = gql`
+  mutation addTodo($item: String) {
+    addTodo(item: $item) @client
+  }
+`;
+
+/*
+  Cache Mutations
+*/
+
+const addTodo = (_obj, {item}, {cache}) => {
+  const query = todoQuery;
+  // Read the todo's from the cache
+  const {currentTodos} = cache.readQuery({query});
+
+  // Add the item to the current todos
+  const updatedTodos = currentTodos.concat(item);
+
+  // Update the cached todos
+  cache.writeQuery({query, data: {currentTodos: updatedTodos}});
+
+  return null;
+};
+
+const clearTodo = (_obj, _args, {cache}) => {
+  cache.writeQuery({query: todoQuery, data: todoDefaults});
+  return null;
+};
+
+/*
+  Store
+*/
+
+// Set up Cache
+const cache = new InMemoryCache();
+
+// Set up Local State
+const stateLink = withClientState({
+  cache,
+  defaults: todoDefaults,
+  resolvers: {
+    Mutation: {
+      addTodo,
+      clearTodo,
+    },
+  },
+});
+
+// Initialize the Apollo Client
+const Client = new ApolloClient({
+  link: ApolloLink.from([
+    stateLink,
+  ]),
+  cache: cache,
+});
+
+/*
+  Helpers
+*/
+
+const todoQueryHandler = {
+  props: ({ownProps, data: {currentTodos = []}}) => ({
+    ...ownProps,
+    currentTodos,
+  }),
+};
+
+const withTodo = compose(
+  graphql(todoQuery, todoQueryHandler),
+  graphql(addTodoQuery, {name: 'addTodoMutation'}),
+  graphql(clearTodoQuery, {name: 'clearTodoMutation'}),
+);
+
+export {
+  Client,
+  withTodo
+}
+```
 
 ### Setup the TodoList Component
 
@@ -160,13 +325,72 @@ Next we need to actually use the queries we defined above. To do this we are goi
 
 #### Create TodoList.js
 
-Embed placeholder 0.20677876332435807
+```jsx
+// TodoList.js
+import React from 'react';
+import compose from 'recompose/compose';
+import withState from 'recompose/withState';
+
+import {withTodo} from './Client'
+
+const TodoListPure =({
+  currentTodos,
+  addTodoMutation,
+  clearTodoMutation,
+  todoText,
+  setTodoText,
+}) => (
+  <div>
+    <h1>Todos</h1>
+    {currentTodos.map((todo, index) => <div key={index}>{todo}</div>)}
+    <input
+      value={todoText}
+      onChange={(e) => setTodoText(e.target.value)}
+      type='text'
+      placeholder='Pick up milk, Grab, cheese, etc'
+    />
+    <input type='submit' value='Add' onClick={(e) => {
+      addTodoMutation({variables: {item: todoText}});
+      setTodoText("")
+    }} />
+    <input type='submit' value='Clear All' onClick={(e) => clearTodoMutation()} />
+  </div>);
+
+const TodoList = compose(
+  withTodo,
+  withState('todoText', 'setTodoText', ''),
+)(TodoListPure);
+
+export default TodoList;
+```
 
 #### **Add TodoList to our App**
 
 We then just need to add the `TodoList` to our `App` container and it should be good to go.
 
-Embed placeholder 0.3232088284926202
+```jsx
+import React from 'react';
+
+import TodoList from './TodoList'
+
+import logo from './logo.svg';
+import './App.css';
+
+const Header = () => (
+  <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <h1 className="App-title">Apollo Link State Demo</h1>
+  </header>);
+
+const App = () => (
+  <div className="App">
+    <Header/>
+    <TodoList/>
+  </div>
+);
+
+export default App;
+```
 
 #### What it should look like
 
@@ -194,8 +418,7 @@ The only caveat so far is that Link State lacks some tooling and third party lib
 
 We dive into how to set up `apollo-link-state` for success when handling `N`additional stores.
 
-[**Setting up apollo-link-state for Multiple Stores**  
-_Overview_medium.com](https://medium.com/@bnchrch/setting-up-apollo-link-state-for-multiple-stores-4cf54fdb1e00 "https://medium.com/@bnchrch/setting-up-apollo-link-state-for-multiple-stores-4cf54fdb1e00")[](https://medium.com/@bnchrch/setting-up-apollo-link-state-for-multiple-stores-4cf54fdb1e00)
+[**Setting up apollo-link-state for Multiple Stores**](/Setting-up-apollo-link-state-for-Multiple-Stores)
 
 > **_🧞‍_ This is open source! you can** [**find it here on Github**](https://github.com/bechurch/link_state_demo)
 

@@ -2,7 +2,7 @@
 title: "Setting up apollo-link-state for Multiple Stores"
 description: "I want to touch on how to set up apollo-link-state to allow for support of multiple stores without interfering with one another. It boils down to that CreateClientState expects only one value for…"
 date: "2018-04-23T00:06:44.769Z"
-categories: 
+categories:
   - React
   - GraphQL
   - Apollo
@@ -19,8 +19,8 @@ I want to touch on how to set up `apollo-link-state` to allow for support of mul
 
 In my last post we went over how to setup `apollo-link-state` for basic use:
 
-[**Storing Local State in React with apollo-link-state**  
-_Special thanks to Peggy Rayzis for all the awesome work and communication that has been going out around this product._medium.com](https://medium.com/@bnchrch/storing-local-state-in-react-with-apollo-link-state-738f6ca45569 "https://medium.com/@bnchrch/storing-local-state-in-react-with-apollo-link-state-738f6ca45569")[](https://medium.com/@bnchrch/storing-local-state-in-react-with-apollo-link-state-738f6ca45569)
+[**Storing Local State in React with apollo-link-state**
+_Special thanks to Peggy Rayzis for all the awesome work and communication that has been going out around this product._](/Storing-Local-State-in-React-with-apollo-link-state)
 
 Now in this tutorial this is the moon we’re shooting for:
 
@@ -53,13 +53,131 @@ Move the configuration of your client store to its own file to help highlight th
 
 Our new `client.js` should look like this:
 
-Embed placeholder 0.9967662286113295
+```jsx
+// client.js
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {ApolloLink} from 'apollo-client-preset';
+import {ApolloClient} from 'apollo-client';
+import CreateClientStore from './CreateClientStore';
+
+// Set up Cache
+const cache = new InMemoryCache();
+
+// Set up Local State
+const stateLink = CreateClientStore(cache);
+
+// Initialize the Apollo Client
+const Client = new ApolloClient({
+  link: ApolloLink.from([
+    stateLink,
+  ]),
+  cache: cache,
+});
+
+export default Client;
+```
 
 #### 2\. Move our defaults, resolvers, and `@client` queries to their own file
 
 Break out the `defaults` and `resolvers` for a specific area of functionality into their own “store” files to help ensure as the application grows code is logically co-located.
 
-Embed placeholder 0.7425668958468103
+```jsx
+// TodoStore.js
+import gql from 'graphql-tag';
+import {graphql} from 'react-apollo';
+import compose from 'recompose/compose';
+
+/*
+  Defaults
+*/
+
+const todoDefaults = {
+  currentTodos: [],
+};
+
+/*
+  GraphQL
+*/
+
+const todoQuery = gql`
+  query GetTodo {
+    currentTodos @client
+  }
+`;
+
+const clearTodoQuery = gql`
+  mutation clearTodo {
+    clearTodo @client
+  }
+`;
+
+const addTodoQuery = gql`
+  mutation addTodo($item: String) {
+    addTodo(item: $item) @client
+  }
+`;
+
+/*
+  Cache Mutations
+*/
+
+const addTodo = (_obj, {item}, {cache}) => {
+  const query = todoQuery;
+  // Read the todo's from the cache
+  const {currentTodos} = cache.readQuery({query});
+
+  // Add the item to the current todos
+  const updatedTodos = currentTodos.concat(item);
+
+  // Update the cached todos
+  cache.writeQuery({query, data: {currentTodos: updatedTodos}});
+
+  return null;
+};
+
+const clearTodo = (_obj, _args, {cache}) => {
+  cache.writeQuery({query: todoQuery, data: todoDefaults});
+  return null;
+};
+
+/*
+  Store
+*/
+
+/**
+ * The Store object used to construct
+ * Apollo Link State's Client State
+*/
+const store = {
+  defaults: todoDefaults,
+  mutations: {
+    addTodo,
+    clearTodo,
+  },
+};
+
+/*
+  Helpers
+*/
+
+const todoQueryHandler = {
+  props: ({ownProps, data: {currentTodos = []}}) => ({
+    ...ownProps,
+    currentTodos,
+  }),
+};
+
+const withTodo = compose(
+  graphql(todoQuery, todoQueryHandler),
+  graphql(addTodoQuery, {name: 'addTodoMutation'}),
+  graphql(clearTodoQuery, {name: 'clearTodoMutation'}),
+);
+
+export {
+  store,
+  withTodo,
+};
+```
 
 #### 3\. Tie it together with some lodash magic 🧙‍
 
@@ -67,7 +185,75 @@ Finally we use some helpers from lodash to merge the export of each `store` file
 
 _Look at the_ `_mergeGet_` _function specifically to see how this occurs._
 
-Embed placeholder 0.875958643419742
+```jsx
+// CreateClientStore.js
+import {store as todoStore} from './TodoState';
+import {withClientState} from 'apollo-link-state';
+import flow from 'lodash/fp/flow';
+import assignIn from 'lodash/fp/assignIn';
+import map from 'lodash/fp/map';
+import reduce from 'lodash/fp/reduce';
+const reduceWithDefault = reduce.convert({cap: false});
+
+/**
+ * At a given attribute this will merge all objects
+ * in a list of objects found at that attribute.
+ *
+ * Example
+ * const objectList = [
+ *   {defaults: {x: true}},
+ *   {defaults: {y: "foo"}},
+ *   {defaults: {z: 123}}
+ * ]
+ *
+ * // returns {x: true, y: "foo", z: 123}
+ * mergeGet("defaults")(objectList)
+ */
+const mergeGet = (attributeName) => flow(
+  // pick a single attribute from each object
+  map(attributeName),
+  // merge all values into a single object
+  reduceWithDefault(assignIn, {})
+);
+
+/**
+ * Local Data Stores
+*/
+const STORES = [
+  todoStore,
+];
+
+/**
+ * Map the Mutation handlers and Default Values of our local state to
+ * the Apollo cache.
+ */
+const CreateClientStore = (cache) => {
+  // Merge all defaults
+  const defaults = mergeGet('defaults')(STORES);
+
+  // Merge all mutations
+  const mutations = mergeGet('mutations')(STORES);
+
+  // Construct the Client State with the given mutations and defaults
+  return withClientState({
+    cache,
+    defaults: defaults,
+    resolvers: {
+      /*
+       * These mutations relate to graphql mutations with the @client decorator
+       * by function name.
+       */
+      Mutation: mutations,
+    },
+  });
+};
+
+/**
+ * Export
+ */
+
+export default CreateClientStore;
+```
 
 ### Adding another feature becomes easy-peasy
 
@@ -79,25 +265,192 @@ Lets test out this statement by adding a Freeform notes field to the application
 
 Nearly identical to the Todo Store above.
 
-Embed placeholder 0.13370423822931898
+```jsx
+// NoteStore.js
+import gql from 'graphql-tag';
+import {graphql} from 'react-apollo';
+import compose from 'recompose/compose';
+
+/*
+  Defaults
+*/
+
+const noteDefaults = {
+  savedNotes: "",
+};
+
+/*
+  GraphQL
+*/
+
+const notesQuery = gql`
+  query GetNotes {
+    savedNotes @client
+  }
+`;
+
+const clearNoteQuery = gql`
+  mutation clearNote {
+    clearNote @client
+  }
+`;
+
+const updateNoteQuery = gql`
+  mutation updateNote($text: String) {
+    updateNote(text: $text) @client
+  }
+`;
+
+/*
+  Cache Mutations
+*/
+
+const updateNote = (_obj, {text}, {cache}) => {
+  // Update the cache
+  cache.writeQuery({query: notesQuery, data: {savedNotes: text}});
+
+  return null;
+};
+
+const clearNote = (_obj, _args, {cache}) => {
+  cache.writeQuery({query: notesQuery, data: noteDefaults});
+  return null;
+};
+
+/*
+  Store
+*/
+
+/**
+ * The Store object used to construct
+ * Apollo Link State's Client State
+*/
+const store = {
+  defaults: noteDefaults,
+  mutations: {
+    updateNote,
+    clearNote,
+  },
+};
+
+/*
+  Helpers
+*/
+
+const notesQueryHandler = {
+  props: ({ownProps, data: {savedNotes = ""}}) => ({
+    ...ownProps,
+    savedNotes,
+  }),
+};
+
+const withNotes = compose(
+  graphql(notesQuery, notesQueryHandler),
+  graphql(updateNoteQuery, {name: 'updateNoteMutation'}),
+  graphql(clearNoteQuery, {name: 'clearNoteMutation'}),
+);
+
+export {
+  store,
+  withNotes,
+};
+```
 
 #### 2\. Hook up the new Store
 
 Import the new store into `CreateClientStore.js` and add it to our `STORES`.
 
-Embed placeholder 0.6670729017557311
+```jsx
+// CreateClientStore.js
+import {store as noteStore} from './NoteStore';
+
+// ...
+
+/**
+ * Local Data Stores
+*/
+const STORES = [
+  todoStore,
+  noteStore,
+];
+```
 
 #### 3\. Create the Note Component
 
 Now that we have the store created and wired in it’s time to put it all to use.
 
-Embed placeholder 0.799471980400819
+```jsx
+// Notes.js
+import React from 'react';
+import compose from 'recompose/compose';
+import withState from 'recompose/withState';
+
+import {withNotes} from './NoteStore'
+
+const NotesPure = ({
+  savedNotes,
+  updateNoteMutation,
+  clearNoteMutation,
+  noteText,
+  setNoteText,
+}) => (
+  <div>
+    <h1>Note</h1>
+    <div>{savedNotes}</div>
+    <div>
+      <textarea
+        value={noteText}
+        onChange={(e) => setNoteText(e.target.value)}
+        placeholder='Whatever else you need to know'
+      />
+    </div>
+    <div>
+      <input type='submit' value='Add' onClick={(e) => {
+        updateNoteMutation({variables: {text: noteText}});
+        setNoteText("")
+      }} />
+      <input type='submit' value='Clear' onClick={(e) => clearNoteMutation()} />
+    </div>
+  </div>);
+
+const Notes = compose(
+  withNotes,
+  withState('noteText', 'setNoteText', ''),
+)(NotesPure);
+
+export default Notes;
+```
 
 #### 4\. Add to app.js
 
 Finally add our new component to our `<App/>` container.
 
-Embed placeholder 0.8429828798815102
+```jsx
+// App.js
+import React from 'react';
+
+import TodoList from './TodoList'
+import Notes from './Notes'
+
+import logo from './logo.svg';
+import './App.css';
+
+const Header = () => (
+  <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <h1 className="App-title">Apollo Link State with Mutlipe Stores</h1>
+  </header>);
+
+const App = () => (
+  <div className="App">
+    <Header/>
+    <TodoList/>
+    <Notes/>
+  </div>
+);
+
+export default App;
+```
 
 ### See it in action!
 
