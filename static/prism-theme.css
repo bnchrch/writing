@@ -1,3 +1,7 @@
+pre {
+  white-space: pre !important;
+}
+
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -38,13 +42,12 @@
   color: #df85ff;
 }
 
-.token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #f8f8f2;
+  color: #505050;
 }
 
 .token.atrule,
@@ -57,8 +60,9 @@
   color: #a875ff;
 }
 
+.token.operator,
 .token.keyword {
-  color: #fdbed4;
+  color: #fc74a3;
 }
 
 .token.regex,
