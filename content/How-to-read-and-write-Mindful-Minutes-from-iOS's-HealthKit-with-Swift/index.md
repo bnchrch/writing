@@ -52,6 +52,13 @@ and update the `info.plist` file to contain what the user will see when we ask f
 
 Add the following `xml` to the `info.plist` file:
 
+```xml
+<key>NSHealthShareUsageDescription</key>
+<string>I would like to access your Mindful Sessions for demoing to readers</string>
+<key>NSHealthUpdateUsageDescription</key>
+<string>I would like to update your Mindful Sessions for demoing to readers</string>
+```
+
 Make sure you add these entries otherwise when you build you will encounter an error
 
 #### 3\. Create a basic UI

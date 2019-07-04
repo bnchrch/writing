@@ -1,9 +1,16 @@
 ---
-title: "Lexer Blog"
-description: "Welcome Back."
+title: "Lexers and Parsers: Letting Business Write Business Logic"
+description: "Using Erlangs built-in lexing and parsing libraries we can easily define restricted and safe grammars that will let your business team define simple rules in your system. Essentially offloading arbirtrary business logic to the business team themselves."
 date: "2019-05-31T19:13:35.239Z"
-categories: []
-published: false
+categories:
+  - Web Development
+  - Software Development
+  - Grammars
+  - Elixir
+  - Erlang
+  - yecc
+  - leex
+published: true
 ---
 
 ### Welcome Back.
@@ -66,7 +73,7 @@ However with brevity in mind I will cover that in a subsequent post :)
 
 Make sure you have Elixir installed then run:
 
-```
+```bash
 mix new lexer_parser
 cd lexer_parser
 mix deps.get
@@ -77,7 +84,7 @@ touch src/business_parser.yrl
 
 Next we want to create 2 additional files that will contain our code.
 
-```
+```bash
 mkdir src
 touch src/business_lexer.xrl
 touch src/business_parser.yrl
@@ -91,7 +98,7 @@ Lets first focus on getting something working. What we want to build is a functi
 
 For example:
 
-```
+```elixir
 LexerParser.evaluate('true and false')
 {:ok, false}
 
@@ -136,7 +143,7 @@ Here lets dive into the code first, then we can pick it apart.
 
 Add the following to `src/business_lexer.xrl`
 
-```
+```erlang
 Definitions.
 WS    = ([\\000-\\s]|%.*)
 
@@ -167,7 +174,7 @@ skip\_token: Discard the token; Don’t apply any meaning to it.
 
 Let’s see what happens if we run some simple strings through the Lexer. You can do so anywhere in your elixir project via the `:business_lexer.string/1` function. Lets do that! Start by opening your terminal and running `iex -S mix` . Next enter the following:
 
-```
+```elixir
 iex(1)> :business_lexer.string('true')
 {:ok, [true: 1], 1}
 
@@ -196,7 +203,7 @@ Notice that it should return `:ok` for tokens the lexer recognizes and `:error
 
 Add the following to `src/business_parser.yrl`
 
-```
+```erlang
 Nonterminals expression bool.
 
 Terminals and_op true false.
@@ -226,34 +233,34 @@ Binary expression: The `binary_expr` is an atom will will match on to denote tha
 
 Alright lets run this, like the lexer this parser will be available anywhere in your project by calling `:business_parser.parse/1` the thing to know is that the input for this function is the tokens from the output of `:business_lexer.string/1` . Lets open our `iex` terminal again and you can see what exactly that looks like:
 
-```
+```elixir
 iex(1)> 'true'
-		|> :business_lexer.string()
-		|> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
+  |> :business_lexer.string()
+  |> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
 
 {:ok, true}
 
 iex(2)> 'false'
-		|> :business_lexer.string()
-		|> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
+  |> :business_lexer.string()
+  |> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
 
 {:ok, false}
 
 iex(3)> 'true and false'
-		|> :business_lexer.string()
-		|> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
+  |> :business_lexer.string()
+  |> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
 
 {:ok, {:binary_expr, :and_op, true, false}}
 
 iex(4)> 'true and true and true'
-		|> :business_lexer.string()
-		|> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
+  |> :business_lexer.string()
+  |> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
 
 {:ok, {:binary_expr, :and_op, true, {:binary_expr, :and_op, true, true}}}
 
 iex(5)> 'and'
-		|> :business_lexer.string()
-		|> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
+  |> :business_lexer.string()
+  |> fn {:ok, tokens, _} -> :business_parser.parse(tokens) end.()
 
 {:error, {1, :business_parser, ['syntax error before: ', ['\\'and\\'']]}}
 
@@ -274,7 +281,7 @@ We’re going to make use of 3 functions and some pattern matching to wrap this 
 
 Lets start by modifying our `lexer_parser.ex` file to include a function that summarizes our system:
 
-```
+```elixir
 def evaluate(expression) do
     with {:ok, tokens, _} <- :business_lexer.string(expression),
          {:ok, tree} <- :business_parser.parse(tokens) do
@@ -285,62 +292,62 @@ def evaluate(expression) do
 
 Next lets define the function that evaluates the tree, the rules to define are:
 
-1.    
-    
-2.  If it’s a binary expression, evaluate the tree at each operand and afterwards take the results and apply logic to them based on the operator.
-3.    
-    
-4.    
-    
-5.  If it’s true or false go straight to applying logic (hint: the logic will be fairly redundant at this stage)
-6.    
-    
+1.
 
-###   
+2.  If it’s a binary expression, evaluate the tree at each operand and afterwards take the results and apply logic to them based on the operator.
+3.
+
+4.
+
+5.  If it’s true or false go straight to applying logic (hint: the logic will be fairly redundant at this stage)
+6.
+
+
+###
 
 -   Tree functions
 
-###   
+###
 
-###   
+###
 
-1.    
-    
+1.
 
-###   
+
+###
 
 -   \=============
 
-###   
+###
 
-###   
+###
 
-1.    
-    
+1.
+
 2.  def evaluate\_tree({:binary\_expr, op, a, b}) do with {:ok, a} <- evaluate\_tree(a), {:ok, b} <- evaluate\_tree(b) do apply\_logic({:binary\_expr, op, a, b}) end end
-3.    
-    
+3.
+
 4.  def evaluate\_tree(other) when other in \[true, false\] do apply\_logic(other) end
-5.    
-    
+5.
+
 
 Finally lets apply the logic that will make use of `true` `false` and `and`:
 
-```
+```elixir
 # Logic functions
-  # ==============
+# ==============
 
-  def apply_logic(boolean) when boolean in [true, false], do: {:ok, boolean}
+def apply_logic(boolean) when boolean in [true, false], do: {:ok, boolean}
 
-  def apply_logic({:binary_expr, :and_op, a, b})
-    when is_boolean(a) and is_boolean(b), do: {:ok, a and b}
+def apply_logic({:binary_expr, :and_op, a, b})
+  when is_boolean(a) and is_boolean(b), do: {:ok, a and b}
 ```
 
 ### Run the code
 
 Again jump into your `iex` shell and test this all out:
 
-```
+```elixir
 iex(1)> LexerParser.evaluate('true')
 {:ok, true}
 
@@ -366,7 +373,7 @@ And Done! We’ve changed the whole game! Alright not really but from here are t
 
 Lets add the ability for us to define variables in this string. The end result should look something like this:
 
-```
+```elixir
 iex(1)> LexerParser.evaluate('a and b', %{"a" => true, "b" => true})
 {:ok, true}
 ```
@@ -379,7 +386,7 @@ We want to add a definition that will encapsulate any variable name (`[A-Za-z_][
 
 This is what your `business_lexer.xrl` file should look like afterwards:
 
-```
+```erlang
 Definitions.
 
 VAR   = ([A-Za-z_][0-9a-zA-Z_]*)
@@ -402,7 +409,7 @@ We essentially want to tell the parser that when given a variable to use it’s 
 
 This is what your `business_parser.yrl` file should look like afterwards:
 
-```
+```erlang
 Nonterminals expression bool.
 
 Terminals var and_op true false.
@@ -430,7 +437,7 @@ Simply we want to include one additional rule to the `apply_logic` function that
 
 This is what your `lexer_parser.ex` file should look like afterwards:
 
-```
+```elixir
 def evaluate(expression, variables \\\\ %{}) do
     with {:ok, tokens, _} <- :business_lexer.string(expression),
          {:ok, tree} <- :business_parser.parse(tokens) do
@@ -470,7 +477,7 @@ def evaluate(expression, variables \\\\ %{}) do
 
 ### Run the code
 
-```
+```elixir
 iex(1)> LexerParser.evaluate('some_system_defined_bool and another_system_defined_bool', %{"some_system_defined_bool" => true, "another_system_defined_bool" => true})
 {:ok, true}
 
@@ -482,7 +489,7 @@ iex(2)> LexerParser.evaluate('some_system_defined_bool and another_system_define
 
 Another type of rule we can add is an **unary expression**. Essentially an operator that takes one operand. The best demonstration of this is the `not` operator. This would be a rule that inverts a boolean value. For example:
 
-```
+```elixir
 iex(1)> LexerParser.evaluate('not false')
 {:ok, true}
 ```
@@ -493,7 +500,7 @@ Let me show you how easy this would be to add.
 
 Your getting the hang of this now so I’ll make this more to the point. Add the following rule to `business_lexer.xrl`:
 
-```
+```erlang
 not     : {token, {not_op,  TokenLine, list_to_atom(TokenChars)}}.
 ```
 
@@ -501,13 +508,13 @@ not     : {token, {not_op,  TokenLine, list_to_atom(TokenChars)}}.
 
 First add the `not_op` to your list of terminals:
 
-```
+```erlang
 Terminals var and_op not_op true false.
 ```
 
 Then add a rule, tagging the `not_op` as an unary expression and passing along the value to the right of it:
 
-```
+```erlang
 expression -> not_op expression : {unary_expr, not_op, '$2'}.
 ```
 
@@ -515,7 +522,7 @@ expression -> not_op expression : {unary_expr, not_op, '$2'}.
 
 Add one extra definition to `evaluate_tree2` that handles a unary expression:
 
-```
+```elixir
 def evaluate_tree({:unary_expr, op, a}, variables) do
     with {:ok, a} <- evaluate_tree(a, variables) do
       apply_logic({:unary_expr, op, a}, variables)
@@ -525,7 +532,7 @@ def evaluate_tree({:unary_expr, op, a}, variables) do
 
 And add one extra definition to `apply_logic/2` that applies the `!` to any `:not_op` value:
 
-```
+```elixir
 def apply_logic({:unary_expr, :not_op, a}, _)
     when is_boolean(a), do: {:ok, !a}
 ```
@@ -545,38 +552,23 @@ Like I said at the start of the post we could keep going on to include numerical
 
 [Expreso](https://github.com/ympons/expreso) is a great library maintained by [ympons](https://github.com/ympons) and contributed to by [yours truly](https://github.com/bechurch) that does all of this heavy lifting for us. It includes:
 
--   +, -, /, \*
--   in
--     
-    
-
->   
-
--     
-    
--   , <, ≥, ≤, =, ≠
--     
-    
-
->   
-
->   
-
--     
-    
--   and, or, not
--   floats and integers
+- +, -, /, \*
+- in
+-
+- , <, ≥, ≤, =, ≠
+- and, or, not
+- floats and integers
 
 Here’s an example of what it can accomplish:
 
-```
+```elixir
 iex(1)> Expreso.eval('not email_disabled and pet_age > 4.1 or clinic_id = 123', %{"email_disabled" => false, "pet_age" => 4.2, "clinic_id" => 124})
 {:ok, true}
 ```
 
 and the code isn’t much more complicated that what we’ve wrote above. Here’s what the parser from this library looks like:
 
-```
+```erlang
 Nonterminals expression predicate scalar_exp elements element bool.
 
 Terminals atom var number string mult_op add_op and_op or_op in_op not_op eq_op comp_op '(' ')' ',' true false.
@@ -630,7 +622,7 @@ extract({T,_,V}) -> {T, V}.
 
 ### Wrap up
 
-```
+```elixir
 # Evaluate if a + 2 is between 3 and 1
 iex> Expreso.eval("a + 2 in (3, 1)", %{"a" => 1})
 iex> {:ok, true}
