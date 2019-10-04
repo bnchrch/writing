@@ -625,6 +625,6 @@ extract({T,_,V}) -> {T, V}.
 
 > \- Archimedes
 
-In the end the challenge to overcome with diving into Erlang and it's tooling isn't complexity, it's syntax. If your willing to put in the time to learn the basics the leverage you can apply to building systems is immense.
+In the end the challenge to overcome with diving into Erlang and its tooling isn't complexity, it's syntax. If your willing to put in the time to learn the basics the leverage you can apply to building systems is immense.
 
 And if you don't feel you have the time, theres always the community's shoulders to stand on because they've built some pretty great things.

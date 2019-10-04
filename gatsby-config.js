@@ -9,7 +9,7 @@ const configuration = {
   // It should complete the sentence: Written by Ben Church ...
   shortBio: '',
   // a longer bio showing on the landing page of the blog
-  bio: `I'm Ben, an Engineer who's loves to build. Products, Processes, Teams, Front, Back, you name it. Below is just a collection of what I've been able to write on it all. If you want to know more about me just get in touch!`,
+  bio: `I'm Ben, an Engineer at Fission who just loves to build. Products, processes, teams, front, back, &c. Below is just a collection of what I've been able to write on.`,
   author: 'Ben Church',
   githubUrl: 'https://github.com/bechurch/writing',
   // replace this by the url where your website will be published

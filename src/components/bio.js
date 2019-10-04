@@ -57,9 +57,12 @@ function Bio() {
         {shortBio ? ` ${shortBio}` : ''}.{` `}
         {social.twitter ? (
           <a href={`https://twitter.com/${social.twitter}`}>
-            You should follow them on Twitter.
+            Follow them on Twitter
           </a>
-        ) : null}
+        ) : null}.{` `}
+        <a href="https://fission.codes/discord">
+        Chat with them on Discord.
+        </a>
       </p>
     </div>
   )
