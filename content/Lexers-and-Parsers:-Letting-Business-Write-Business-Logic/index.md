@@ -36,13 +36,13 @@ and the PM just created this story:
 
 > As an administrator I would like to be able to determine who gets a survey based on the location of the user, their pets age and the clinic they are a customer of.
 
-Right away you can spot the quicksand.
+Now right awaythese is a lot of quick sand here.
 
 ![](https://media1.tenor.com/images/190200bf9d6c171e75daab926b40c710/tenor.gif?itemid=5139670)
 
-Here exist many requirements/parameters that could change often, using a lot of dev time trivially.
+Many requirements and parameters; that could change often; using a lot of dev time.
 
-For example in the near future we may want to send surveys based on a user or clinic feature flag, a pets species or breed and potentially some other model entirely.
+For example in the near future we may want to send surveys based on a user or clinic feature flag, a pets species or breed and potentially some other model entirely. Leaving us a lot to edit, repeatedly.
 
 # The Solution.
 _Give your entire company commit access!_
@@ -619,8 +619,9 @@ Erlang code.
 extract_value({_,V}) -> V.
 extract({T,_,V}) -> {T, V}.
 ```
+You can see there's not alot of new concepts in here. Just more copy and pasting as new operators are added.
 
-# Wrap up
+# Wrap this all up
 > Give me a lever and a place to stand and I will move the earth.
 
 > \- Archimedes
