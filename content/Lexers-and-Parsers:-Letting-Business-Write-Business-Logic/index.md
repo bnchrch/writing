@@ -12,6 +12,16 @@ categories:
   - leex
 published: true
 ---
+# Overview
+---
+**PSA: You can watch instead of read.**
+
+_This was a talk at[The Big Elixir 2019](https://www.thebigelixir.com/) in New Orleans_
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GTP0llRvEmE?start=52" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 Today we’re talking about Lexers and Parsers, more importantly I want to show you how you:
 
 1. Can give your business team a crazy amount of flexibility
