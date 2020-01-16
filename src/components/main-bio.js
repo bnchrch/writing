@@ -104,7 +104,8 @@ function Bio() {
             ) : null
           )}
         </ul>
-        <p>{bio} If you want to know more about what I'm up to come and have a <a href="fission.codes/discord">chat with me on Discord</a></p>
+        <p>{bio}</p>
+        <p>If you want to know more about what I'm up to <a href="https://www.producthunt.com/@bnchrch">follow me on Product Hunt</a></p>
       </div>
       <Image
         className="avatar"

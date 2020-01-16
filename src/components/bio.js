@@ -55,13 +55,15 @@ function Bio() {
       <p style={{ margin: 0 }}>
         Written by <strong>{author}</strong>
         {shortBio ? ` ${shortBio}` : ''}.{` `}
+        {`Like what you read? Follow me on `}
         {social.twitter ? (
-          <a href={`https://twitter.com/${social.twitter}`}>
-            Follow them on Twitter
+          <a href="https://www.producthunt.com/@bnchrch">
+            Product Hunt
           </a>
-        ) : null}.{` `}
-        <a href="https://fission.codes/discord">
-        Chat with them on Discord.
+        ) : null}
+        {` or `}
+        <a href={`https://twitter.com/${social.twitter}`}>
+         Twitter.
         </a>
       </p>
     </div>
