@@ -1,5 +1,5 @@
 ---
-title: "How to read and write Mindful Minutes from iOS’s HealthKit with Swift"
+title: "How to read and write Mindful Minutes from iOS’s HealthKit"
 description: "I absolutely love the route Apple has been going with their iOS SDK’s. (Their hardware not so much). Apple’s focus on security has allowed it to become a reliable company to trust your sensitive…"
 date: "2018-08-06T18:01:41.279Z"
 categories:

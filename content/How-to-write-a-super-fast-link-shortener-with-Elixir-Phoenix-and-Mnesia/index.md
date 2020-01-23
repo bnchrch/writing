@@ -1,5 +1,5 @@
 ---
-title: "How to write a super fast link shortener with Elixir, Phoenix, and Mnesia"
+title: "How to write a super fast link shortener with Mnesia"
 description: "Elixir, the Phoenix framework, and the Erlang VM allows us to make production ready systems fast, easily, and with very few moving parts. At this point, you can see where we’re going with this. Let’s…"
 date: "2018-09-18T21:49:29.826Z"
 categories:

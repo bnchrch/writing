@@ -1,5 +1,5 @@
 ---
-title: "Lexers and Parsers: Letting Business Write Business Logic"
+title: "Let Business Write Business Logic"
 description: "Using Erlangs built-in lexing and parsing libraries we can easily define restricted and safe grammars that will let your business team define simple rules in your system. Essentially offloading arbirtrary business logic to the business team themselves."
 date: "2019-05-31T19:13:35.239Z"
 categories:
