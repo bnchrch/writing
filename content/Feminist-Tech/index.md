@@ -45,9 +45,9 @@ The complexity of scaling your company becomes simplified as async encompasses m
 Finally you make better decisions as a result. Text communication is a great forcing function^^ to distill and refine your thoughts. Making your overall decision quality rise with it.
 
 ## 3. Health First
-Their day is primed to focus on their definition of wellness, encourage them to focus on it. Again, rushed people make mistakes, tired people make poor decisions, poor mindset translates into poor work product. No one wants that.
+Rushed people make mistakes, tired people make poor decisions, poor mindset translates into poor work product. No one wants that. So why do so many have a culture that pushes people towards this? Excessive hours, rigid schedules, the space to focus on better health considered an employee perk, not a company strategy. People must be encouraged to focus on their mental and physical wellbeing. Everything will be better for it.
 
-Places where everyone can post pictures of their unwind time, activities, family. Providing programs that encourage physical and mental health. Fitness class and equipment reimbursements, team accounts for your favorite meditation app, adding counseling to your medical plan. All keep your team in the right headspace to do their best work.
+Channels where everyone can post pictures of their unwind time, activities, family. Programs that encourage physical and mental health. Fitness classes and equipment reimbursements, team accounts for your favorite meditation app, counceling available on your medical plan. All of these keep your team in the right headspace to do their best work.
 
 Most importantly, the core team has to signal that taking care of yourself is OK by being vocal about their own wellness and recovery time. This is not optional.
 
