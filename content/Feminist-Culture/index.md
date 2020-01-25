@@ -14,7 +14,7 @@ Tyrannical managers, Long hours, Ass in seat, "What's self care?", Punishment ov
 
 I'm hyper privileged. In many ways. But let's talk about a subset of it. My work environment for the last few years.
 
-I naturally seek out flexibility. It's one of my core values. And as a result I've found my self ^^dropped neatly^^ into the realm of remote tech work. Don't worry this isn't a "remote is the future" post, I'll save that for another soap box. But it is about the companies that have taken remote to heart and the cultural mind set it impresses. It's about respecting and embracing the diversity of people, of work styles, of location. It's about knowing that being personally well creates well working products and teams. It's about prioritizing learning and leadership over misguided middle management.^^
+I naturally seek out flexibility. It's one of my core values. And as a result I've found my self dropped contently into the realm of remote tech work. Don't worry this isn't a "remote is the future" post, I'll save that for another soap box. But it is about the companies that have taken remote to heart and the cultural mind set it impresses. It's about respecting and embracing the diversity of people, of work styles, of location. It's about knowing that being personally well creates well working products and teams. It's about prioritizing learning and leadership over misguided middle management.
 
 [Metalab's "Don't hire assholes" comes to mind.](https://hazelhq.com/blog/metalab-founder-no-asshole-policy/)
 
@@ -42,7 +42,7 @@ Higher output, higher resiliency, lower employee turn over, all good things. Yet
 
 The complexity of scaling a company becomes simplified as async work encompasses many of the best practices for growing. The company is already available around the clock. Everyone is a satellite office.
 
-Another second order effect, everyone makes better decisions. Text communication is a great forcing function^^ to distill and refine your thoughts. Making your overall decision quality rise with it.
+Another second order effect, everyone makes better decisions. Text communication is a great forcing function to distill and refine your thoughts. Making your overall decision quality rise with it.
 
 A company that bakes async work into it's fabric from the begining will be better set to compete and better set to grow.
 
