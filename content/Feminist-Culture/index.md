@@ -40,34 +40,41 @@ Because working asynchronously is a different way of working. One that any team 
 
 Higher output, higher resiliency, lower employee turn over, all good things. Yet the real benefit of async is it's second order effects. Every decision, conversation, piece of context becomes searchable as your team develops a shared [Second Brain](https://medium.com/swlh/how-i-use-my-second-brain-b5300d68e83a). Allowing anyone to get on-boarded to any project, team, or issue faster.
 
-The complexity of scaling your company becomes simplified as async encompasses many of the best practices for growing. The company is already available around the clock. Everyone is a satellite office.
+The complexity of scaling a company becomes simplified as async work encompasses many of the best practices for growing. The company is already available around the clock. Everyone is a satellite office.
 
-Finally you make better decisions as a result. Text communication is a great forcing function^^ to distill and refine your thoughts. Making your overall decision quality rise with it.
+Another second order effect, everyone makes better decisions. Text communication is a great forcing function^^ to distill and refine your thoughts. Making your overall decision quality rise with it.
+
+A company that bakes async work into it's fabric from the begining will be better set to compete and better set to grow.
 
 ## 3. Health First
-Rushed people make mistakes, tired people make poor decisions, poor mindset translates into poor work product. No one wants that. So why do so many have a culture that pushes people towards this? Excessive hours, rigid schedules, the space to focus on better health considered an employee perk, not a company strategy. People must be encouraged to focus on their mental and physical wellbeing. Everything will be better for it.
 
-Channels where everyone can post pictures of their unwind time, activities, family. Programs that encourage physical and mental health. Fitness classes and equipment reimbursements, team accounts for your favorite meditation app, counceling available on your medical plan. All of these keep your team in the right headspace to do their best work.
+Rushed people make mistakes, tired people make poor decisions, poor mindset translates into poor work product. No one wants that. So why do so many have a culture that pushes people towards this? Excessive hours, rigid schedules, the permission to focus on your health considered an employee perk, not a company strategy.
 
-Most importantly, the core team has to signal that taking care of yourself is OK by being vocal about their own wellness and recovery time. This is not optional.
+To have a well performing team and product people must be encouraged to take time for their mental and physical wellbeing. Everything will be better for it.
+
+Channels where one can post pictures of their unwind time, activities, and family. Programs that encourage physical and mental health. Fitness classes and equipment reimbursements, team accounts for your favorite meditation app, and counceling available on your medical plan. All of these keep a team in the right headspace to do their best work.
+
+Most importantly, the leadership team has to signal that taking care of yourself is OK by being vocal about their own wellness and recovery time. This is not optional.
 
 ## 4. Praise Over Punishment
 
-We see this effect in comment sections and reviews online. People are swift to criticism and slow to praise. However, humans respond best to intrinsic motivations which are best created initially by external praise.
+ People are swift to criticism and slow to praise online. We see this in comment sections and in customer reviews. However, humans respond best to intrinsic motivations which are best created initially by external praise.
 
-Welcome to the remote team culture paradox. Any successful team has to be mindful of this. Truly great team needs to feel bonded, protective and supported. You need to guide a culture thats quick to public praise so that people feel like their part of the community and naturally want to contribute their best back into it. Without fostering this many will feel like opening Slack is the worst part of the day and avoid it at all cost. Your communication as a team will suffer and so will your product.
+Welcome to the remote team culture paradox.
 
-This isn't a hard problem, just a constant one. You will need to address three simple things to continually encourage this environment:
+Any successful team has to be mindful of this. Truly great teams need to feel bonded, protected, and supported. A culture must be formed thats quick to public praise. Members need to feel like they're part of the community so they naturally want to contribute their best back into it. Without fostering this many will feel like opening Slack is the worst part of the day and avoid it at all cost. Communication as a team will suffer and so will the product.
+
+This isn't a hard problem, just a constant one. To encourage this environment three things must be addressed:
 
 1. Make praise visible to everyone
 2. Track who is receiving praise
 3. Attach rewards to the praise itself
 
-[Bonusly](https://bonus.ly/) is used to do exactly this and it does it well.
+[Bonusly](https://bonus.ly/) is used to do exactly this and it does it well. I can't recommend it enough for establishing these systems
 
 ## 5. Guide Over Shame
 
-Knowledge sharing and skill building is a fact for all teams. Junior, senior, it doesn't really matter, your company will always have information asymmetry that will need to be addressed. Repeating for those in the back: **ALWAYS!**
+Knowledge sharing and skill building is a fact for all teams. Junior, senior, it doesn't really matter, any company will always have information asymmetry that will need to be addressed. Repeating for those in the back: **ALWAYS!**
 
 In a distributed team the text box can become an ego barrier, preventing people from freely asking questions. Don't let it be. Everyone needs to feel secure in exposing their knowledge gaps. Free from criticism, free from a bruised ego. Otherwise, they will withdraw inward, struggle to solve their issue, and the whole company will suffer where it didn't have to.
 
