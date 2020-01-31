@@ -1,5 +1,5 @@
 ---
-title: "Feminist Culture"
+title: "Feminist Work Culture"
 description: "Life doesn't fall neatly into a 9-5 for everyone. There are appointments, sick children, dry cleaning, night owls and early birds. Life is hectic, people are different. We all know this. So why don't we build systems to account for this?"
 date: "2020-01-17T10:13:35.239Z"
 categories:
@@ -18,7 +18,7 @@ I naturally seek out flexibility. It's one of my core values. And as a result I'
 
 [Metalab's "Don't hire assholes" comes to mind.](https://hazelhq.com/blog/metalab-founder-no-asshole-policy/)
 
-Last night I was gifted a word for all of it. Feminist Culture. A set of systems in online work that aim to promote your best work by starting with the person and not the output. Feminist Culture embraces the multitude of ways people live and the environments they produce their best work in.
+Last night I was gifted a word for all of it. Feminist Work Culture. A set of systems in online work that aim to promote your best work by starting with the person and not the output. Feminist Culture embraces the multitude of ways people live and the environments they produce their best work in.
 
 This is a work in progress but I've been able to identify 5 principles that I want to share. 5 principles that I've cultivated over my last 4 positions who in part or whole embodied these aspects.
 
