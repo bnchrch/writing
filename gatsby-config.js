@@ -30,6 +30,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-135503975-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+      }
+    },
+    {
       resolve: 'gatsby-mdx',
       options: {
         extensions: ['.md', '.mdx'],
