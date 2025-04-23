@@ -1,7 +1,7 @@
 ---
 title: "Mental Models for Simpler Code"
 description: "Functional programming ideas that help reduce cognitive load and make systems easier to understand."
-date: "2025-04-22"
+date: "2024-01-22"
 published: true
 slug: "mental-models-for-simpler-code"
 tags:

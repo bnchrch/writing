@@ -1,7 +1,7 @@
 ---
 title: "Mental Models for Programming"
 description: "A comprehensive guide to mental models in software development, from code to business context"
-date: "2023-05-19"
+date: "2024-04-19"
 published: true
 slug: "mental-models-for-programming"
 tags:
