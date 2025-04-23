@@ -37,7 +37,7 @@ For example, when scoping a publishing feature, I might define:
 
 Getting alignment on these definitions first prevents downstream confusion when discussing features for different user types.
 
-## User Stories Drive Development
+## 📖 User Stories Drive Development
 
 Once taxonomy is agreed upon, I structure both the Continent and Island sections around user stories. This keeps the focus on user needs rather than technical implementations. Each story follows the format:
 

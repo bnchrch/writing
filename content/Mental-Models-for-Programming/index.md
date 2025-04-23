@@ -20,7 +20,7 @@ Mental Models for Programming
 
 Ok so I think theres levels to mental models in software system.
 
-***Important Note:* ***I listed these from smallest area of concern to largest. However when starting a new system or extending an existing system the most useful is to walk these levels backwards. From 4 to 1, or better said,* ***why to what to how****.*
+* ***Important Note:***I listed these from smallest area of concern to largest. However when starting a new system or extending an existing system the most useful is to walk these levels backwards. From 4 to 1, or better said, ***why to what to how****. *
 
 Level 1: My program
 -------------------
@@ -45,7 +45,7 @@ The next level up is: How do I write maintainable code inside any paradigm? or i
 
 Now at this level is where you will often find me trying to inject some ideas from a functional programming lens.
 
-To that end feel free to take a look at[**Mental Models for Simpler Code**](/mental-models-for-simpler-code)
+To that end feel free to take a look at [**Mental Models for Simpler Code**](/mental-models-for-simpler-code)
 
 
 Level 3: Personal and Peer (anti-)habits
@@ -80,6 +80,6 @@ Afterwards [**Minimum viable product**](https://en.wikipedia.org/wiki/Minimum_vi
 
 This is often a UX/UI question. But is just as important in software interfaces. The purpose is to identify what a user may already know and leverage that to make interfaces you dont have to explain to them. Which makes the product feel intuitive and easy to use.
 
-i.e. Dont use a new language unless you have to, dont deviate from the expected by calling your README file view.txt, or if you declare docker images via something other than dockerfiles there better be a good reason :stuck_out_tongue:
+*i.e. Dont use a new language unless you have to, dont deviate from the expected by calling your README file view.txt, or if you declare docker images via something other than dockerfiles there better be a good reason*
 
 And finally just **asking how does this impact the business**? why are we doing this? what are our motivations? How does this make us money? These question can be really clarifying and lead to unexpected, counterintuitive but important insights. **These are often the best questions to start with**.

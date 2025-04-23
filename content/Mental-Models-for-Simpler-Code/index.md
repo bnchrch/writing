@@ -57,6 +57,52 @@ Disclaimer: I'm not a fan of Haskell, and warn anyone considering it for anythin
 
 ## Principles
 
+### Communication First
+
+All problems in software are communication problems. Between people. Between now-you and future-you.
+
+Your code should:
+
+-   Be **readable** by someone unfamiliar with the system
+-   Be **skimable** by someone who just wants to trace a bug
+-   Use **small functions** that do one thing
+-   Flow **linearly**, so the reader doesn't jump around
+-   Include **pattern-matching** to reduce ambiguity
+
+**Comments** are still useful --- not to explain what a line of code does, but to explain why it exists.
+
+### Use Familiar Concepts
+
+Shared understanding is more important than theoretical purity.
+
+-   Use `.env` files --- people expect them
+-   Name the entry file `README.md` --- don't get cute
+-   Stick to conventional structures unless there's a good reason
+
+Your system should feel obvious to someone who's seen something like it before. If you have to explain your choices constantly, they may not be working.
+
+### Local Over Global
+
+Every time you reach for a global variable, a singleton, or a shared mutable object, you're increasing the amount of context someone needs to understand the system.
+
+Instead:
+
+-   Pass what you need
+-   Return values clearly
+-   Treat state as data, not as behavior
+
+### Composability is Future-Proofing
+
+All code will eventually become legacy code.
+
+You won't get the abstraction right the first time. Composability means you don't have to:
+
+-   You can **rewrite** pieces without breaking the whole
+-   You can **swap** out modules as your mental model improves
+-   You can **test** small parts in isolation, giving confidence to refactor later
+
+This is why reusable transforms and decoupled flows matter.
+
 ### Minimize Cognitive Load
 
 At the heart of all good code is this simple idea: **reduce the amount of information someone needs to understand at any given time**.
@@ -119,42 +165,6 @@ const service = new UserService("abc123", "https://api.example.com", "42");
 const user = await service.fetchUser();
 ```
 
-### Communication First
-
-All problems in software are communication problems. Between people. Between now-you and future-you.
-
-Your code should:
-
--   Be **readable** by someone unfamiliar with the system
--   Be **skimable** by someone who just wants to trace a bug
--   Use **small functions** that do one thing
--   Flow **linearly**, so the reader doesn't jump around
--   Include **pattern-matching** to reduce ambiguity
-
-**Comments** are still useful --- not to explain what a line of code does, but to explain why it exists.
-
-### Composability is Future-Proofing
-
-All code will eventually become legacy code.
-
-You won't get the abstraction right the first time. Composability means you don't have to:
-
--   You can **rewrite** pieces without breaking the whole
--   You can **swap** out modules as your mental model improves
--   You can **test** small parts in isolation, giving confidence to refactor later
-
-This is why reusable transforms and decoupled flows matter.
-
-### Local Over Global
-
-Every time you reach for a global variable, a singleton, or a shared mutable object, you're increasing the amount of context someone needs to understand the system.
-
-Instead:
-
--   Pass what you need
--   Return values clearly
--   Treat state as data, not as behavior
-
 ### Quarantine the Hacks
 
 If you're writing something that shouldn't exist in a perfect world, isolate it. Document it. Track it.
@@ -207,16 +217,6 @@ This makes the tech debt:
 -   Contained
 -   Testable
 -   Obvious at the callsite
-
-### Use Familiar Concepts
-
-Shared understanding is more important than theoretical purity.
-
--   Use `.env` files --- people expect them
--   Name the entry file `README.md` --- don't get cute
--   Stick to conventional structures unless there's a good reason
-
-Your system should feel obvious to someone who's seen something like it before. If you have to explain your choices constantly, they may not be working.
 
 
 ## Final Thought
