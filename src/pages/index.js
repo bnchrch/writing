@@ -10,28 +10,57 @@ import { formatPostDate, formatReadingTime } from '../utils/dates'
 
 import './blog-listing.css'
 
-const BlogIndexPage = ({ data: { allMdx } }) => (
-  <Layout>
-    <SEO title="By Ben Church" keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']} />
-    <Section centered>
-      <MainBio />
-    </Section>
+const BlogIndexPage = ({ data }) => {
+  // Combine MDX and MarkdownRemark nodes
+  const allMdx = data.allMdx || { nodes: [] };
+  const allMarkdownRemark = data.allMarkdownRemark || { nodes: [] };
 
-    {allMdx.nodes.map(post => (
-      <Section key={post.fields.slug} name={post.fields.slug} centered>
-        <a href={post.fields.slug} className="blog-listing">
-          <h1>{post.frontmatter.title}</h1>
-          <p>
-            {formatPostDate(post.frontmatter.date)}
-            {` • ${formatReadingTime(post.timeToRead)}`}
-          </p>
-          <Pills items={post.frontmatter.categories} />
-          <p>{post.frontmatter.description}</p>
-        </a>
+  // Convert markdown nodes to the same structure as MDX nodes
+  const markdownNodes = allMarkdownRemark.nodes.map(node => ({
+    ...node,
+    frontmatter: {
+      ...node.frontmatter,
+      estimatedReadingTime: node.frontmatter.estimatedReadingTime || 5
+    }
+  }));
+
+  // Combine both types of nodes
+  const allNodes = [...allMdx.nodes, ...markdownNodes];
+
+  // Sort by date
+  const sortedNodes = allNodes.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  return (
+    <Layout>
+      <SEO
+        title="By Ben Church"
+        keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']}
+        canonicalLink={null}
+      />
+      <Section name="bio" centered big={false}>
+        <MainBio />
       </Section>
-    ))}
-  </Layout>
-)
+
+      {sortedNodes.map(post => (
+        <Section key={post.fields.slug} name={post.fields.slug} centered big={false}>
+          <a href={post.fields.slug} className="blog-listing">
+            <h1>{post.frontmatter.title}</h1>
+            <p>
+              {formatPostDate(post.frontmatter.date)}
+              {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
+            </p>
+            <Pills items={post.frontmatter.categories} />
+            <p>{post.frontmatter.description}</p>
+          </a>
+        </Section>
+      ))}
+    </Layout>
+  );
+};
 
 export default BlogIndexPage
 
@@ -39,18 +68,35 @@ export const query = graphql`
   query BlogIndex {
     allMdx(
       filter: { fields: { published: { eq: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         fields {
           slug
         }
-        timeToRead
         frontmatter {
           title
           description
           categories
           date(formatString: "MMMM DD, YYYY")
+          estimatedReadingTime
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { fields: { published: { eq: true } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          description
+          categories
+          date(formatString: "MMMM DD, YYYY")
+          estimatedReadingTime
         }
       }
     }

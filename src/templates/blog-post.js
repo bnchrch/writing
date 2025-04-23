@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
 
 import SEO from '../components/seo'
 import Pills from '../components/pills'
@@ -10,17 +10,29 @@ import { formatPostDate, formatReadingTime } from '../utils/dates'
 
 import './blog-post.css'
 
-export default function PageTemplate({ data: { mdx, site }, pageContext }) {
+// Define custom components
+const shortcodes = { Embed }
+
+export default function PageTemplate({ data, children, pageContext }) {
+  const { mdx, markdownRemark, site } = data
+
+  // Use either MDX or MarkdownRemark node
+  const post = mdx || markdownRemark
+
+  if (!post) {
+    return <div>Post not found</div>
+  }
+
   const { previous, next } = pageContext
-  const publicUrl = `${site.siteMetadata.siteUrl}${mdx.fields.slug}`
+  const publicUrl = `${site.siteMetadata.siteUrl}${post.fields.slug}`
 
   return (
     <div>
       <SEO
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.description}
-        canonicalLink={mdx.frontmatter.canonicalLink}
-        keywords={mdx.frontmatter.categories || []}
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        canonicalLink={post.frontmatter.canonicalLink}
+        keywords={post.frontmatter.categories || []}
         meta={[
           {
             name: 'twitter:label1',
@@ -28,22 +40,35 @@ export default function PageTemplate({ data: { mdx, site }, pageContext }) {
           },
           {
             name: 'twitter:data1',
-            content: `${mdx.timeToRead} min read`,
+            content: `${post.frontmatter.estimatedReadingTime || '5'} min read`,
           },
         ]}
       />
       <section className="center blog">
         <article className="container small">
           <header>
-            <h1>{mdx.frontmatter.title}</h1>
+            <h1>{post.frontmatter.title}</h1>
             <p>
-              {formatPostDate(mdx.frontmatter.date)}
-              {` • ${formatReadingTime(mdx.timeToRead)}`}
+              {formatPostDate(post.frontmatter.date)}
+              {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
             </p>
-            <Pills items={mdx.frontmatter.categories} />
+            <Pills items={post.frontmatter.categories} />
           </header>
 
-          <MDXRenderer scope={{ Embed }}>{mdx.code.body}</MDXRenderer>
+          {/* Render MDX content if available */}
+          {mdx && (
+            <MDXProvider components={shortcodes}>
+              {children}
+            </MDXProvider>
+          )}
+
+          {/* Render MarkdownRemark content if available */}
+          {markdownRemark && (
+            <div
+              className="markdown-content"
+              dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+            />
+          )}
         </article>
         <footer className="container small">
           <small>
@@ -59,8 +84,8 @@ export default function PageTemplate({ data: { mdx, site }, pageContext }) {
               target="_blank"
               rel="nofollow noopener noreferrer"
               href={`${site.siteMetadata.githubUrl}/edit/master/content${
-                mdx.fields.slug
-              }index.mdx`}
+                post.fields.slug
+              }index.md`}
             >
               Edit this post on GitHub
             </a>
@@ -105,24 +130,39 @@ export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
     site {
       siteMetadata {
+        title
+        author
         siteUrl
         githubUrl
       }
     }
     mdx(id: { eq: $id }) {
+      id
       fields {
         slug
       }
-      timeToRead
       frontmatter {
         title
+        date(formatString: "MMMM DD, YYYY")
         description
         categories
-        date(formatString: "MMMM DD, YYYY")
         canonicalLink
+        estimatedReadingTime
       }
-      code {
-        body
+    }
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        categories
+        canonicalLink
+        estimatedReadingTime
       }
     }
   }
