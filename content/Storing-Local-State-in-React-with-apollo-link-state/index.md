@@ -420,6 +420,6 @@ We dive into how to set up `apollo-link-state` for success when handling `N`addi
 
 [**Setting up apollo-link-state for Multiple Stores**](/Setting-up-apollo-link-state-for-Multiple-Stores)
 
-> **_🧞‍_ This is open source! you can** [**find it here on Github**](https://github.com/bechurch/link_state_demo)
+> **_🧞‍_ This is open source! you can** [**find it here on Github**](https://github.com/bnchrch/link_state_demo)
 
 > ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

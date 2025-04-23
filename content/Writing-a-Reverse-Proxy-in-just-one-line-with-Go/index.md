@@ -323,6 +323,6 @@ Go has a lot going for it but where it really struts it stuff is in these lower 
 
 For simple services I can see myself reaching for Go again in the future.
 
-> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/reverse-proxy-demo)
+> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/reverse-proxy-demo)
 
 > ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

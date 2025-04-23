@@ -16,7 +16,7 @@ Auth0 makes a lot of things easy. Social Logins, Forgot Password, Magic Links, a
 
 Though Auth0 is a victim of its own success. A lot of people use it, which means a lot of use cases, which means a lot of features and a pile of documentation. Which at times can be both contradictory and out of date.
 
-As a result, I took the time to create [Auth0_jwks](https://github.com/bechurch/auth0_jwks). A small library to help everyone use Auth0’s JWK functionality to authenticate their API endpoints as painlessly as possible.
+As a result, I took the time to create [Auth0_jwks](https://github.com/bnchrch/auth0_jwks). A small library to help everyone use Auth0’s JWK functionality to authenticate their API endpoints as painlessly as possible.
 
 Below I’ll show you how it’s used and by the end of this you will
 
@@ -51,6 +51,6 @@ Well enough preamble, Let’s get started!
 ## Run It
 
 
-#### 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/shorten_api_tutorial)
+#### 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/shorten_api_tutorial)
 
 #### ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

@@ -421,6 +421,6 @@ But! The core features and functionality of Elixir and Phoenix make using databa
 
 ![](./asset-5.gif)
 
-> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/pub_sub_demo)
+> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/pub_sub_demo)
 
 > ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

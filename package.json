@@ -6,7 +6,7 @@
   "author": "Ben Church <ben.douglas.church@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bechurch/writting.git"
+    "url": "git+https://github.com/bnchrch/writting.git"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
@@ -82,8 +82,8 @@
     "semi": false
   },
   "bugs": {
-    "url": "https://github.com/bechurch/writting/issues"
+    "url": "https://github.com/bnchrch/writting/issues"
   },
-  "homepage": "https://github.com/bechurch/writting#readme",
+  "homepage": "https://github.com/bnchrch/writting#readme",
   "main": "gatsby-browser.js"
 }

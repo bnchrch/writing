@@ -161,4 +161,4 @@ If I have any parting words it would be:
 
 > ❤️ If you like what you read [follow me on Twitter](https://twitter.com/bnchrch)
 
-> 🐙 If your interested in development [follow me on Github](https://github.com/bechurch)
+> 🐙 If your interested in development [follow me on Github](https://github.com/bnchrch)

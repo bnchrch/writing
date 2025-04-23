@@ -286,6 +286,6 @@ However, I think that Apple, in contrast to other platforms, makes their API’s
 
 I hope this post saves you from having to stumble around and can get you shipping your products faster!
 
-> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/MindfulMinuteDemo)
+> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/MindfulMinuteDemo)
 
 > ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

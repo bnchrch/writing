@@ -345,6 +345,6 @@ curl --request POST \
 
 Amazing how easy it was with all these tools to create a fast, easy to maintain and simple to extend link shortener. A lot of the credit here can go to the BEAM (Erlang VM), Jose Valim (creator of Elixir), and Chris McCord (creator of Phoenix). The rest of the praise goes to how simple the idea of a link shortener is, in no way justifying a $500 per month introductory price tag. Still looking at you Bit.ly.
 
-#### 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/shorten_api_tutorial)
+#### 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/shorten_api_tutorial)
 
 #### ❤️ I only write about programming and remote work. If you [follow me on Twitter](https://www.twitter.com/bnchrch) I won’t waste your time.

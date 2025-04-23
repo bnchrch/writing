@@ -466,6 +466,6 @@ Part of supporting a project is learning how to use it and learning how to impro
 
 Happy coding!
 
-> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bechurch/link_state_demo)
+> 🧞‍ This is open source! you can [find it here on Github](https://github.com/bnchrch/link_state_demo)
 
 > ❤️ **I only write about programming and remote work. If you** [**follow me on Twitter**](https://www.twitter.com/bnchrch) **I won’t waste your time.**

@@ -13,7 +13,7 @@ const configuration = {
   // a longer bio showing on the landing page of the blog
   bio: `I'm Ben, an Engineer who just loves to build. Products, processes, teams, front, back, etc. Below is just a collection of what I've been able to write on.`,
   author: 'Ben Church',
-  githubUrl: 'https://github.com/bechurch/writing',
+  githubUrl: 'https://github.com/bnchrch/writing',
   // replace this by the url where your website will be published
   siteUrl: 'https://by.ben.church',
   social: {
@@ -21,7 +21,7 @@ const configuration = {
     twitter: 'bnchrch',
     medium: '@bnchrch',
     facebook: '',
-    github: 'bechurch',
+    github: 'bnchrch',
     linkedin: 'bnchrch',
     instagram: '',
   },
@@ -65,7 +65,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-embed-gist",
             options: {
-              username: 'bechurch',
+              username: 'bnchrch',
               includeDefaultCss: false
             }
           },
@@ -100,7 +100,7 @@ module.exports = {
             resolve: "gatsby-remark-embed-gist",
             options: {
               // the github handler whose gists are to be accessed
-              username: 'bechurch',
+              username: 'bnchrch',
               // a flag indicating whether the github default gist css should be included or not
               // default: true
               includeDefaultCss: false
