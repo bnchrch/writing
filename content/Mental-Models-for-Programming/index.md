@@ -7,7 +7,7 @@ slug: "mental-models-for-programming"
 categories:
   - Functional Programming
   - Mental Models
-
+  - Written by Robots
 tags:
   - programming
   - mental models

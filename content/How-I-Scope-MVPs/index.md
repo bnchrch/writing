@@ -7,6 +7,7 @@ slug: "continents-and-islands"
 categories:
   - Product Development
   - Project Management
+  - Written by Robots
 tags:
   - mvp
   - product management
