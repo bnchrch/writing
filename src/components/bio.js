@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function Bio() {
   const { site, avatar } = useStaticQuery(
@@ -8,13 +8,13 @@ function Bio() {
       query BioQuery {
         avatar: file(absolutePath: { regex: "/avatar.png/" }) {
           childImageSharp {
-            fixed(width: 50, height: 50, quality: 80) {
-              base64
-              width
-              height
-              src
-              srcSet
-            }
+            gatsbyImageData(
+              width: 50
+              height: 50
+              quality: 100
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         site {
@@ -31,6 +31,7 @@ function Bio() {
   )
 
   const { author, social, shortBio } = site.siteMetadata
+  const avatarImage = getImage(avatar)
 
   return (
     <div
@@ -39,19 +40,24 @@ function Bio() {
         marginBottom: '4.375rem',
       }}
     >
-      <Image
-        fixed={avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: '0.875rem',
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: '100%',
-        }}
-        imgStyle={{
-          borderRadius: '50%',
-        }}
-      />
+      {avatarImage && (
+        <GatsbyImage
+          image={avatarImage}
+          alt={author}
+          style={{
+            marginRight: '0.875rem',
+            marginBottom: 0,
+            width: 50,
+            height: 50,
+            minWidth: 50,
+            borderRadius: '50%',
+            overflow: 'hidden',
+          }}
+          imgStyle={{
+            borderRadius: '50%',
+          }}
+        />
+      )}
       <p style={{ margin: 0 }}>
         Written by <strong>{author}</strong>
         {shortBio ? ` ${shortBio}` : ''}.{` `}

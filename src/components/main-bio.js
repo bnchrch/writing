@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import './main-bio.css'
 
@@ -52,13 +52,13 @@ function Bio() {
       query MainBioQuery {
         avatar: file(absolutePath: { regex: "/avatar.png/" }) {
           childImageSharp {
-            fixed(width: 150, height: 150, quality: 90) {
-              base64
-              width
-              height
-              src
-              srcSet
-            }
+            gatsbyImageData(
+              width: 150
+              height: 150
+              quality: 100
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         site {
@@ -79,6 +79,7 @@ function Bio() {
   )
 
   const { author, social, bio } = site.siteMetadata
+  const avatarImage = getImage(avatar)
 
   return (
     <div
@@ -107,20 +108,25 @@ function Bio() {
         <p>{bio}</p>
         <p>If you want to know more about what I'm up to <a href="https://www.producthunt.com/@bnchrch">follow me on Product Hunt</a></p>
       </div>
-      <Image
-        className="avatar"
-        fixed={avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginBottom: 0,
-          minWidth: 150,
-          borderRadius: '100%',
-          border: '8px solid lavender',
-        }}
-        imgStyle={{
-          borderRadius: '50%',
-        }}
-      />
+      {avatarImage && (
+        <GatsbyImage
+          className="avatar"
+          image={avatarImage}
+          alt={author}
+          style={{
+            marginBottom: 0,
+            width: 150,
+            height: 150,
+            minWidth: 150,
+            borderRadius: '50%',
+            border: '8px solid lavender',
+            overflow: 'hidden',
+          }}
+          imgStyle={{
+            borderRadius: '50%',
+          }}
+        />
+      )}
     </div>
   )
 }

@@ -31,6 +31,7 @@ module.exports = {
   siteMetadata: configuration,
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
