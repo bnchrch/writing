@@ -57,7 +57,7 @@ function Bio() {
               height: 150
               quality: 100
               placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
