@@ -5,7 +5,7 @@ date: "2024-04-19"
 published: true
 slug: "mental-models-for-programming"
 categories:
-  - FunctionalProgramming
+  - Functional Programming
   - Mental Models
 
 tags:

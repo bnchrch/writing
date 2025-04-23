@@ -5,7 +5,7 @@ date: "2024-01-22"
 published: true
 slug: "mental-models-for-simpler-code"
 categories:
-  - FunctionalProgramming
+  - Functional Programming
   - Mental Models
 tags:
   - programming
