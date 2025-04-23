@@ -4,6 +4,9 @@ description: "Functional programming ideas that help reduce cognitive load and m
 date: "2024-01-22"
 published: true
 slug: "mental-models-for-simpler-code"
+categories:
+  - FunctionalProgramming
+  - Mental Models
 tags:
   - programming
   - functional programming

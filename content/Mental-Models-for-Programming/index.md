@@ -4,6 +4,10 @@ description: "A comprehensive guide to mental models in software development, fr
 date: "2024-04-19"
 published: true
 slug: "mental-models-for-programming"
+categories:
+  - FunctionalProgramming
+  - Mental Models
+
 tags:
   - programming
   - mental models
