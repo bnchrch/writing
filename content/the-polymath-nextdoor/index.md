@@ -1,5 +1,5 @@
 ---
-title: "The Polymath Nextdoor"
+title: "The Rise of the Non-Technical Engineer"
 description: "LLMs collapsed the beginner-to-intermediate curve in software. The result isn't just faster engineers. It's new engineers: a CFO, a dentist, a chef, a marketer. And they're going to want an API key."
 date: "2026-02-19"
 categories:
@@ -125,9 +125,9 @@ He's not a software engineer. He's a dentist who thinks like an engineer. **Ther
 
 ### The content operating system
 
-Through GrowthX.ai, I work with elite marketing talent at the frontier of AI and content. One of them, a CEO and former CMO, showed me his personal "content operating system."
+Through GrowthX.ai, I work with some of the best marketing talent at the frontier of AI and content. One of them, a CEO and former CMO, showed me his personal "content operating system."
 
-It was cobbled together from custom scripts, cloud code, a GitHub repo, and a folder structure full of markdown files. But functionally, it was a data processing pipeline. Inputs: meeting transcripts, blog posts, company profiles, contacts. Outputs: summaries, writing guides, personas, themes. Further refinements through what he called "skills," markdown files used by AI agents to transform artifacts through multiple stages.
+It was a system for him to produce any piece of content he needed. Investor decks, emails, handbooks, blog posts. All cobbled together from custom scripts, claude code, a GitHub repo, and a folder structure full of markdown files. But functionally, it was a data processing pipeline. Inputs: meeting transcripts, blog posts, company profiles, contacts. Outputs: summaries, writing guides, personas, themes. Further refinements through what he called "skills," markdown files used by AI agents to transform artifacts through multiple stages.
 
 The result: he can one-shot content in his voice and brand style, repeatedly, with consistent outputs and minimal drift.
 
