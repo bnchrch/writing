@@ -84,10 +84,10 @@ Undermining your own authority with unnecessary qualifiers.
 ## Important Nuance for Ben's Voice
 
 Some phrases that are generally "AI slop" are things Ben uses authentically:
-- **"Let's dive in!"** — Ben says this naturally. It's only slop when preceded by three paragraphs of throat-clearing.
-- **Emoji** — Ben uses emoji genuinely and sparingly (😍, 🎉, 💀). It's slop when every paragraph has one.
-- **"Simple!"** — Ben uses this as a one-word paragraph after showing something is, in fact, simple.
-- **Lists** — Ben loves numbered lists. They're slop when every single section uses the exact same list format.
-- **Exclamation marks** — Ben uses them for genuine enthusiasm ("Doesn't Phoenix and Elixir make this so so pretty? 😍"). They're slop when forced.
+- **"Let's dive in!"**: Ben says this naturally. It's only slop when preceded by three paragraphs of throat-clearing.
+- **Emoji**: Ben uses emoji genuinely and sparingly (😍, 🎉, 💀). It's slop when every paragraph has one.
+- **"Simple!"**: Ben uses this as a one-word paragraph after showing something is, in fact, simple.
+- **Lists**: Ben loves numbered lists. They're slop when every single section uses the exact same list format.
+- **Exclamation marks**: Ben uses them for genuine enthusiasm ("Doesn't Phoenix and Elixir make this so so pretty? 😍"). They're slop when forced.
 
 The test: does it feel like the writer *means it*, or like they're following a template?

@@ -16,7 +16,7 @@ Universal writing principles. These apply regardless of personal voice or conten
 Abstract language hides weak thinking. Use specific examples, real numbers, actual names. "We improved performance" tells the reader nothing. "Response time dropped from 800ms to 120ms" tells them everything.
 
 ### Use Active Voice
-Active voice is direct, clear, and shorter. "The function processes the request" beats "The request is processed by the function." Passive voice has its place — when the actor is unknown or unimportant — but default to active.
+Active voice is direct, clear, and shorter. "The function processes the request" beats "The request is processed by the function." Passive voice has its place (when the actor is unknown or unimportant) but default to active.
 
 ### Show, Don't Declare
 Don't tell the reader something is "interesting" or "important." Show them why through evidence, examples, or the implications. Let them draw their own conclusions.

@@ -1,6 +1,6 @@
 ---
 title: "On Luck"
-description: "This started as an email to my daughter about why fear holds us back. It turned into a probability argument for why the winning strategy in modern life isn't perfection — it's volume."
+description: "This started as an email to my daughter about why fear holds us back. It turned into a probability argument for why the winning strategy in modern life isn't perfection, it's volume."
 date: "2026-01-19"
 categories:
   - Life
@@ -12,7 +12,7 @@ published: true
 
 ---
 
-There's a category of ideas I want you to get very good at recognizing. I'll call them **universal human blind spots** — things our brains are naturally bad at, not because we're dumb, but because we didn't evolve for the modern world.
+There's a category of ideas I want you to get very good at recognizing. I'll call them **universal human blind spots**, things our brains are naturally bad at. Not because we're dumb, but because we didn't evolve for the modern world.
 
 Two big ones matter a lot.
 
@@ -34,13 +34,13 @@ Fear made sense once.
 
 On the great plains, every decision carried real risk. Pick the wrong path, the wrong fight, the wrong meal, and you could die. Make the wrong social move and you could lose your tribe. Lose the tribe, and survival got very hard very fast.
 
-Life back then, like life today, was akin to rolling a pair of dice where you could roll as many times as you wanted. But with one key difference — roll a 6, you're dead. Game over. Finished.
+Life back then, like life today, was akin to rolling a pair of dice where you could roll as many times as you wanted. But with one key difference. Roll a 6, you're dead. Game over. Finished.
 
 So our brains evolved to be vigilant. Conservative. Very good at avoiding rolls.
 
 That same instinct is what you feel today when you want to:
 
-- Learn something new — a dive, a front flip, go to a foreign place
+- Learn something new: a dive, a front flip, go to a foreign place
 - Give a speech
 - Apply for something you're not "ready" for
 - Talk to someone you're attracted to
@@ -94,13 +94,13 @@ You could roll many times, but if you ever hit that 6, the game was over. No ret
 | 5th (3 or 11) | 0 wins | ☠️ | ☠️ | ☠️ |
 | Weakest (2 or 12) | 0 wins | ☠️ | ☠️ | ☠️ |
 
-With those odds, by about 10 rolls, no matter your talents, you were already more likely than not to be dead. By 100 rolls, death was almost guaranteed — and winning was not.
+With those odds, by about 10 rolls, no matter your talents, you were already more likely than not to be dead. By 100 rolls, death was almost guaranteed. And winning was not.
 
 So the rational strategy wasn't to roll often.
 
 It was to conserve rolls.
 
-Spend your time improving your skills, your strength, your social standing — anything that would improve your odds before you rolled.
+Spend your time improving your skills, your strength, your social standing. Anything that would improve your odds before you rolled.
 
 In that world, fear of opportunity wasn't a flaw.
 
@@ -143,7 +143,7 @@ When you look at these numbers, here's what I want you to notice and remember.
 
 **Third:** it's far easier to work to find 1,000 rolls than it is to become LeBron, Serena, Magnus, or Taylor Swift.
 
-**Fourth:** some opportunities are incredibly rare — 1 in 10,000 or more. The only strategy to ever hit them is to roll often. Skill is a footnote. But when they hit, they change everything.
+**Fourth:** some opportunities are incredibly rare, 1 in 10,000 or more. The only strategy to ever hit them is to roll often. Skill is a footnote. But when they hit, they change everything.
 
 **Fifth:** being engaged, working on your craft, puts you in situations naturally where you are closer to opportunity. It puts you near luck. Rolls get you more rolls.
 
@@ -157,4 +157,4 @@ Put yourself, your dreams out into the world and the world will respond.
 
 ---
 
-So go out there, ignore the fear — it's not real — and roll those dice. Roll them again and again and don't stop.
+So go out there, ignore the fear (it's not real), and roll those dice. Roll them again and again and don't stop.

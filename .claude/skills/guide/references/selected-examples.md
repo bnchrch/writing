@@ -1,6 +1,6 @@
 # Selected Examples
 
-Curated excerpts from Ben Church's published posts, organized by writing mode. These are calibration examples — use them to check that transformed text sounds like it came from the same person.
+Curated excerpts from Ben Church's published posts, organized by writing mode. These are calibration examples. Use them to check that transformed text sounds like it came from the same person.
 
 ---
 
@@ -99,7 +99,7 @@ Curated excerpts from Ben Church's published posts, organized by writing mode. T
 >
 > I encourage anyone reading to add, expand and refine this. We'll all be better for it.
 
-**What makes it Ben:** Scopes his claims to his own experience. "This is JUST me" — doesn't overclaim. Invites the reader to build on it. Closes with a humble, genuine statement.
+**What makes it Ben:** Scopes his claims to his own experience. "This is JUST me," doesn't overclaim. Invites the reader to build on it. Closes with a humble, genuine statement.
 
 ---
 
@@ -112,7 +112,7 @@ Curated excerpts from Ben Church's published posts, organized by writing mode. T
 >
 > I'm often on planes lately. Sometimes I sleep, sometimes I read or write code, other times I watch an entire season before a decent has begun. I always get from one destination to the next. Typically I'm the same person from take off to landing. Today however, I'm not.
 
-**What makes it Ben:** Opens with a provocative bold claim, then shifts to a personal anecdote that grounds it. The plane setup is specific and human — not abstract philosophizing.
+**What makes it Ben:** Opens with a provocative bold claim, then shifts to a personal anecdote that grounds it. The plane setup is specific and human, not abstract philosophizing.
 
 ### Building to a philosophical question
 *From "Don't Ad Me Bro":*
@@ -126,7 +126,7 @@ Curated excerpts from Ben Church's published posts, organized by writing mode. T
 
 > Everyone must ask themselves: "Are you OK being obsolete?", "Are you OK not having control over your actions?" and if you're not, then what are you going to do about it?
 
-**What makes it Ben:** Direct questions to the reader. Doesn't tell them what to think — asks them to confront it themselves.
+**What makes it Ben:** Direct questions to the reader. Doesn't tell them what to think. Asks them to confront it themselves.
 
 ---
 
@@ -137,7 +137,7 @@ Curated excerpts from Ben Church's published posts, organized by writing mode. T
 
 > Ok so I think theres levels to mental models in software system.
 
-**What makes it Ben:** "Ok so" — drops you mid-thought. Doesn't dress it up. A complex topic introduced in the most casual way possible.
+**What makes it Ben:** "Ok so" drops you mid-thought. Doesn't dress it up. A complex topic introduced in the most casual way possible.
 
 ### Framework introduction
 *From "Let Business Write Business Logic":*

@@ -11,16 +11,16 @@ Ben writes like a senior engineer who's figured something out and wants to expla
 ## Voice Characteristics
 
 ### Conversational, Direct, Unpretentious
-Like explaining to a smart peer over coffee. Uses first person throughout. No formal academic tone. No "one might posit" — instead "I've found" and "Here's what works."
+Like explaining to a smart peer over coffee. Uses first person throughout. No formal academic tone. No "one might posit." Instead: "I've found" and "Here's what works."
 
 ### Honest About Limits
-Admits uncertainty, acknowledges privilege, questions his own assertions. "This is a work in progress" and "this is JUST me" and "You can't always satisfy these, but you can try." This isn't weakness — it builds trust.
+Admits uncertainty, acknowledges privilege, questions his own assertions. "This is a work in progress" and "this is JUST me" and "You can't always satisfy these, but you can try." This isn't weakness. It builds trust.
 
 ### Slightly Irreverent
 Occasional profanity for genuine emphasis, not shock value. Self-deprecating but not self-undermining. Has fun with titles ("How to implement auth0 with a phoenix api and a react frontend using RS256 FUCKING RS256"). Pokes at things he disagrees with ("Still looking at you Bit.ly").
 
 ### Genuinely Enthusiastic
-Gets excited about ideas and elegant solutions, not about himself. "Doesn't Phoenix and Elixir make this so so pretty? 😍" — this is real enthusiasm, not performative. He doesn't gush about everything; when he's excited, you can tell he means it.
+Gets excited about ideas and elegant solutions, not about himself. "Doesn't Phoenix and Elixir make this so so pretty? 😍" is real enthusiasm, not performative. He doesn't gush about everything; when he's excited, you can tell he means it.
 
 ## Sentence Patterns
 
@@ -31,9 +31,9 @@ Short, punchy sentences land key points. Longer ones build complexity and explor
 - Long: "A company that bakes async work into its fabric from the beginning will be better set to compete and better set to grow."
 
 ### Signature Openers
-- **"Ok so..."** — Casual entry into a topic, like picking up mid-conversation
-- **"Let's..."** — Inviting the reader along as a co-explorer
-- **"Essentially..."** — Clarifying or simplifying what just came before
+- **"Ok so..."**: Casual entry into a topic, like picking up mid-conversation
+- **"Let's..."**: Inviting the reader along as a co-explorer
+- **"Essentially..."**: Clarifying or simplifying what just came before
 
 ### Parenthetical Asides
 Adds personality without disrupting flow. Often used for honest caveats or humor.
@@ -42,8 +42,8 @@ Adds personality without disrupting flow. Often used for honest caveats or humor
 - "(provided by Erlang)"
 
 ### Emphasis Patterns
-- **"Repeating for those in the back: ALWAYS!"** — For critical points
-- **Bold for newly introduced concepts** — "what I call the 'Continent'" / "Feminist Work Culture"
+- **"Repeating for those in the back: ALWAYS!"**: For critical points
+- **Bold for newly introduced concepts**: "what I call the 'Continent'" / "Feminist Work Culture"
 - Single-sentence paragraphs for emphasis
 
 ## Structural Patterns
@@ -59,7 +59,7 @@ Ben's standard progression, especially in technical posts:
 Sets clear expectations early. Tells the reader exactly what they'll get.
 
 ### Headers as Signposts
-Frequent headers that let readers scan. Not decorative — functional.
+Frequent headers that let readers scan. Not decorative. Functional.
 
 ### Numbered Lists for Sequential Content
 Steps, processes, ordered items. He doesn't force bullets when order matters.
@@ -85,7 +85,7 @@ Comments on the code in a natural voice: "Basic parsing of a JSON blob to a stru
 Starts with the simplest version, then layers on complexity. "Let's first focus on getting something working."
 
 ### Practical and Runnable
-Examples are real — you can copy them and run them. Not theoretical pseudocode.
+Examples are real. You can copy them and run them. Not theoretical pseudocode.
 
 ## Opening Patterns
 
@@ -115,7 +115,7 @@ Ben does NOT ease in. No three paragraphs of context before the point.
 > 🧞‍ This is open source! you can find it here on Github
 > ❤️ I only write about programming and remote work. If you follow me on Twitter I won't waste your time.
 
-**Never oversells:** His closing on "Feminist Work Culture" is "We'll all be better for it" — humble, not grandiose.
+**Never oversells:** His closing on "Feminist Work Culture" is "We'll all be better for it." Humble, not grandiose.
 
 ## What Ben Does NOT Do
 

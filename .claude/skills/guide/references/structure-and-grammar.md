@@ -4,17 +4,17 @@ Formatting standards for Ben Church's blog.
 
 ## Language
 
-- **US English** — color, organize, favorite, analyze (not colour, organise, favourite, analyse)
-- **Contractions encouraged** — it's, don't, won't, can't, we're, they're. Ben writes conversationally; uncontracted forms sound stiff in his voice.
-- **Oxford comma** — always. "Load balancing, A/B Testing, and Caching."
+- **US English**: color, organize, favorite, analyze (not colour, organise, favourite, analyse)
+- **Contractions encouraged**: it's, don't, won't, can't, we're, they're. Ben writes conversationally; uncontracted forms sound stiff in his voice.
+- **Oxford comma**: always. "Load balancing, A/B Testing, and Caching."
 
 ## Punctuation
 
-- **Em dashes** — use freely for asides and interjections. Ben uses them naturally. No spaces around em dashes in the markdown source (rendered with spaces by the blog).
-- **Semicolons** — use sparingly; only when two closely related independent clauses benefit from connection.
-- **Exclamation marks** — use for genuine enthusiasm only. One per section maximum unless you really mean it.
-- **Quotation marks** — double quotes for direct quotes and scare quotes. Single quotes for code/technical references in running text when backticks aren't appropriate.
-- **Ellipsis** — three dots, no spaces between ("Even more specifically… were gonna write a Reverse Proxy!").
+- **No em dashes.** Do not use em dashes (—). Use commas, periods, colons, or parentheses instead. Restructure sentences if needed.
+- **Semicolons**: use sparingly; only when two closely related independent clauses benefit from connection.
+- **Exclamation marks**: use for genuine enthusiasm only. One per section maximum unless you really mean it.
+- **Quotation marks**: double quotes for direct quotes and scare quotes. Single quotes for code/technical references in running text when backticks aren't appropriate.
+- **Ellipsis**: three dots, no spaces between ("Even more specifically… were gonna write a Reverse Proxy!").
 
 ## Paragraphs
 
@@ -25,7 +25,7 @@ Formatting standards for Ben Church's blog.
 ## Headings
 
 - **Use liberally.** Headers are signposts for scanning, not decoration.
-- **Sentence case** — "Creating a way to store these links" not "Creating A Way To Store These Links."
+- **Sentence case**: "Creating a way to store these links" not "Creating A Way To Store These Links."
 - **H2 for major sections, H3 for subsections, H4 for steps.** Don't skip levels.
 - **Be descriptive.** "Redirect from an Id to a URL" beats "Next Steps."
 
@@ -34,7 +34,7 @@ Formatting standards for Ben Church's blog.
 - **Numbered lists** for sequential steps or ordered items.
 - **Bullet lists** for unordered collections.
 - **Keep items parallel** in grammatical structure.
-- Don't force everything into lists — prose is fine for connected ideas.
+- Don't force everything into lists. Prose is fine for connected ideas.
 
 ## Code Formatting
 
@@ -60,7 +60,7 @@ Formatting standards for Ben Church's blog.
 ## Links
 
 - Use descriptive link text, not "click here."
-- Link to external resources for context — Wikipedia, docs, other people's writing.
+- Link to external resources for context: Wikipedia, docs, other people's writing.
 - Ben links generously: "go learn more about this" not "stay on my page."
 
 ## Blog Post Frontmatter
@@ -79,7 +79,7 @@ slug: "url-slug"                  # optional, defaults from directory name
 ---
 ```
 
-- **title** — the display title. Use sentence case. Can be playful.
-- **description** — 1-2 sentences for the listing page. Should make someone want to read the post.
-- **categories** — 2-5 tags. Use existing categories from other posts when possible.
-- **published** — set to `false` to keep as draft.
+- **title**: the display title. Use sentence case. Can be playful.
+- **description**: 1-2 sentences for the listing page. Should make someone want to read the post.
+- **categories**: 2-5 tags. Use existing categories from other posts when possible.
+- **published**: set to `false` to keep as draft.
