@@ -166,8 +166,8 @@ module.exports = {
         name: 'Ben Church',
         short_name: 'Ben Church',
         start_url: '/',
-        background_color: '#001724',
-        theme_color: '#001724',
+        background_color: '#ffffff',
+        theme_color: '#000000',
         display: 'minimal-ui',
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },

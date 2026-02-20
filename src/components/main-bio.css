@@ -1,6 +1,6 @@
 .main-bio-container {
   display: flex;
-  margin-top: 10em;
+  margin-top: 2.5rem;
 }
 .main-bio {
   flex: 0 0 80%;
@@ -20,7 +20,7 @@
 }
 
 .main-bio-container svg:hover path {
-  fill: #7dffb3;
+  fill: #000;
 }
 
 @media (max-width: 1024px) {
@@ -33,7 +33,7 @@
     margin-right: 0;
   }
   .main-bio h1 {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
   }
 }
 

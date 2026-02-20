@@ -1,11 +1,12 @@
 .container {
-  max-width: 1160px;
+  max-width: 680px;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
+  padding: 0 1.5rem;
 }
 
 .container.small {
-  max-width: 900px;
+  max-width: 680px;
 }
 
 .center {

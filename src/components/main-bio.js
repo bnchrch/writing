@@ -106,7 +106,7 @@ function Bio() {
           )}
         </ul>
         <p>{bio}</p>
-        <p>If you want to know more about what I'm up to <a href="https://www.producthunt.com/@bnchrch">follow me on Product Hunt</a></p>
+        <p>If you want to know more about what I'm up to, check out <a href="https://ben.church">my website</a></p>
       </div>
       {avatarImage && (
         <GatsbyImage
@@ -119,7 +119,7 @@ function Bio() {
             height: 150,
             minWidth: 150,
             borderRadius: '50%',
-            border: '8px solid lavender',
+            border: '3px solid #000',
             overflow: 'hidden',
           }}
           imgStyle={{

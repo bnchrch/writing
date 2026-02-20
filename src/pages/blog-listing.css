@@ -1,14 +1,20 @@
 .blog-listing {
   display: block;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   text-decoration: none;
 }
 
+.blog-listing:hover h1 {
+  color: #666;
+}
+
 .blog-listing p {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  color: #666;
 }
 
 .blog-listing h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
 }

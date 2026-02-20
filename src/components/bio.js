@@ -61,13 +61,11 @@ function Bio() {
       <p style={{ margin: 0 }}>
         Written by <strong>{author}</strong>
         {shortBio ? ` ${shortBio}` : ''}.{` `}
-        {`Like what you read? Follow me on `}
-        {social.twitter ? (
-          <a href="https://www.producthunt.com/@bnchrch">
-            Product Hunt
-          </a>
-        ) : null}
-        {` or `}
+        {`Like what you read? Check out `}
+        <a href="https://ben.church">
+          my website
+        </a>
+        {` or follow me on `}
         <a href={`https://twitter.com/${social.twitter}`}>
          Twitter.
         </a>
