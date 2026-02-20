@@ -1,3 +1,18 @@
+/* Blog post layout (replaces section.css which is no longer imported) */
+.blog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.blog .container {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
 .blog h3 {
   margin-top: 2rem;
 }
