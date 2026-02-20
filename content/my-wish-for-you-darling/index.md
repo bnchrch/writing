@@ -4,6 +4,7 @@ description: "An open letter to my daughter about happiness, games, and roses."
 date: "2025-09-30"
 categories:
   - Life
+  - Mental Models
 published: true
 ---
 

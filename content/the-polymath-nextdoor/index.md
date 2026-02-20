@@ -5,6 +5,8 @@ date: "2026-02-19"
 categories:
   - Technology
   - Software Engineering
+  - Engineering Management
+  - Product
 published: true
 ---
 
