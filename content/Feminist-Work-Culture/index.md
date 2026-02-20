@@ -1,5 +1,5 @@
 ---
-title: "Feminist Work Culture"
+title: "Work Culture for Distributed Teams"
 description: "Life doesn't fall neatly into a 9-5 for everyone. There are appointments, sick children, dry cleaning, night owls and early birds. Life is hectic, people are different. We all know this. So why don't we build systems to account for this?"
 date: "2020-02-19T10:13:35.239Z"
 categories:

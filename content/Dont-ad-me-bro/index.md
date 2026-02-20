@@ -1,5 +1,5 @@
 ---
-title: "Don't Ad Me Bro"
+title: "What if humans are deterministic?"
 description: "What are we if we're not dictating our own thoughts and outcomes? The saying is \"I think therefore I am\". Should it now be \"I'm statistically significant therefore I'm not\"?"
 date: "2019-11-11T19:13:35.239Z"
 categories:
