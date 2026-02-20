@@ -1,13 +1,32 @@
 .main-bio-container {
   display: flex;
-  margin-top: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 100px;
 }
-.main-bio {
-  flex: 0 0 80%;
-  margin-right: 1.5rem;
-}
-.main-bio h1 {
+
+.main-bio-container h1 {
   margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.horizontal-links {
+  list-style-type: none;
+  margin-bottom: 0.75rem;
+  padding-left: 0;
+}
+
+.horizontal-links > li {
+  display: inline-block;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+.horizontal-links > li:last-child {
+  margin-right: 0;
 }
 
 .horizontal-links svg {
@@ -23,39 +42,32 @@
   fill: #000;
 }
 
-@media (max-width: 1024px) {
-  .main-bio-container {
-    flex-wrap: wrap;
+.avatar {
+  overflow: visible !important;
+  animation: avatar-glow 4s ease-in-out infinite;
+}
+
+@keyframes avatar-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
   }
-  .main-bio {
-    order: 1;
-    flex: 0 0 100%;
-    margin-right: 0;
-  }
-  .main-bio h1 {
-    margin-top: 1.5rem;
+  50% {
+    box-shadow: 0 0 30px 12px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* horizontal lists of links */
-.horizontal-links {
-  list-style-type: none;
-  margin-bottom: 0;
-  padding-left: 0;
+@media only screen and (max-width: 768px) {
+  .main-bio-container {
+    padding: 1.5rem;
+  }
 }
-.horizontal-links > li {
-  display: inline-block;
-  margin-right: 1.5rem;
-  margin-bottom: 0;
-}
-.horizontal-links > li:last-child {
-  margin-right: 0;
-}
+
 @media only screen and (max-width: 480px) {
   .horizontal-links {
     margin-left: 0;
   }
 }
+
 @media only screen and (max-width: 320px) {
   .horizontal-links {
     display: block;

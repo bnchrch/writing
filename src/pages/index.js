@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Section from '../components/section'
 import Pills from '../components/pills'
 import MainBio from '../components/main-bio'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
@@ -41,23 +40,24 @@ const BlogIndexPage = ({ data }) => {
         keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']}
         canonicalLink={null}
       />
-      <Section name="bio" centered big={false}>
-        <MainBio />
-      </Section>
-
-      {sortedNodes.map(post => (
-        <Section key={post.fields.slug} name={post.fields.slug} centered big={false}>
-          <a href={post.fields.slug} className="blog-listing">
-            <h1>{post.frontmatter.title}</h1>
-            <p>
-              {formatPostDate(post.frontmatter.date)}
-              {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
-            </p>
-            <Pills items={post.frontmatter.categories} />
-            <p>{post.frontmatter.description}</p>
-          </a>
-        </Section>
-      ))}
+      <div className="homepage-layout">
+        <aside className="homepage-sidebar">
+          <MainBio />
+        </aside>
+        <div className="homepage-content">
+          {sortedNodes.map(post => (
+            <a key={post.fields.slug} href={post.fields.slug} className="blog-listing">
+              <h1>{post.frontmatter.title}</h1>
+              <p>
+                {formatPostDate(post.frontmatter.date)}
+                {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
+              </p>
+              <Pills items={post.frontmatter.categories} />
+              <p>{post.frontmatter.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };

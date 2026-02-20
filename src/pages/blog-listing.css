@@ -1,8 +1,40 @@
+/* Two-column homepage layout */
+.homepage-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.homepage-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.homepage-content {
+  flex: 1;
+  max-width: 1000px;
+  min-width: 0;
+  padding: 5rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Blog listing items */
 .blog-listing {
   display: block;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.blog-listing:last-child {
+  border-bottom: none;
 }
 
 .blog-listing:hover h1 {
@@ -17,4 +49,27 @@
 .blog-listing h1 {
   margin-bottom: 0.5rem;
   transition: color 0.2s ease;
+}
+
+/* Responsive: collapse to single column */
+@media (max-width: 768px) {
+  .homepage-layout {
+    flex-direction: column;
+  }
+
+  .homepage-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex: none;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .homepage-content {
+    flex: none;
+    width: 100%;
+    padding: 1.5rem;
+    border-left: none;
+  }
 }

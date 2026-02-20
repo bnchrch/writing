@@ -82,51 +82,42 @@ function Bio() {
   const avatarImage = getImage(avatar)
 
   return (
-    <div
-      className="main-bio-container"
-      style={{
-        marginBottom: '4.375rem',
-      }}
-    >
-      <div className="main-bio">
-        <h1 style={{ marginBottom: '0.875rem' }}>{author}</h1>
-        <ul className="horizontal-links" style={{ marginBottom: '0.875rem' }}>
-          {Object.keys(social).map(s =>
-            social[s] ? (
-              <li key={s}>
-                <a
-                  aria-label={`${s} profile`}
-                  className="u-no-box-shadow"
-                  href={`${socialURLs[s]}/${social[s]}`}
-                >
-                  {socialIcons[s]}
-                </a>
-              </li>
-            ) : null
-          )}
-        </ul>
-        <p>{bio}</p>
-        <p>If you want to know more about what I'm up to, check out <a href="https://ben.church">my website</a></p>
-      </div>
+    <div className="main-bio-container">
       {avatarImage && (
         <GatsbyImage
           className="avatar"
           image={avatarImage}
           alt={author}
           style={{
-            marginBottom: 0,
-            width: 150,
-            height: 150,
-            minWidth: 150,
-            borderRadius: '50%',
-            border: '3px solid #000',
-            overflow: 'hidden',
+            marginBottom: '1.25rem',
+            width: 120,
+            height: 120,
+            minWidth: 120,
+            borderRadius: '12px',
           }}
           imgStyle={{
-            borderRadius: '50%',
+            borderRadius: '12px',
           }}
         />
       )}
+      <h1>{author}</h1>
+      <ul className="horizontal-links">
+        {Object.keys(social).map(s =>
+          social[s] ? (
+            <li key={s}>
+              <a
+                aria-label={`${s} profile`}
+                className="u-no-box-shadow"
+                href={`${socialURLs[s]}/${social[s]}`}
+              >
+                {socialIcons[s]}
+              </a>
+            </li>
+          ) : null
+        )}
+      </ul>
+      <p>{bio}</p>
+      <p>If you want to know more about what I'm up to, check out <a href="https://ben.church">my website</a></p>
     </div>
   )
 }
