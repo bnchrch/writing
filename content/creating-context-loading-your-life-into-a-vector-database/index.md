@@ -4,6 +4,9 @@ description: "Talk at Scale By The Bay, Oakland 2023"
 date: "2023-11-15"
 categories:
   - Talk
+  - AI
+  - Vector Database
+  - MCP
 published: true
 ---
 

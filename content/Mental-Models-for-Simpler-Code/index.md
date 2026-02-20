@@ -7,7 +7,6 @@ slug: "mental-models-for-simpler-code"
 categories:
   - Functional Programming
   - Mental Models
-  - Written by Robots
 tags:
   - programming
   - functional programming

@@ -7,7 +7,6 @@ slug: "planning-cycles-and-aligning-teams"
 categories:
   - Engineering Management
   - Leadership
-  - Written by Robots
 tags:
   - planning
   - team alignment

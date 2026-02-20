@@ -4,6 +4,9 @@ description: "Talk at move(data), San Francisco 2025"
 date: "2025-03-20"
 categories:
   - Talk
+  - AI
+  - Airbyte
+  - Data Engineering
 published: true
 ---
 

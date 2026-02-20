@@ -4,6 +4,10 @@ description: "Talk at Diffusion, Berlin 2019"
 date: "2019-10-19"
 categories:
   - Talk
+  - IPFS
+  - Distributed Systems
+  - CLI
+  - Haskell
 published: true
 ---
 
