@@ -42,17 +42,49 @@
   fill: #000;
 }
 
-.avatar {
-  overflow: visible !important;
-  animation: avatar-glow 4s ease-in-out infinite;
+.avatar-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
-@keyframes avatar-glow {
-  0%, 100% {
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 30px 12px rgba(0, 0, 0, 0.2);
+.avatar-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: conic-gradient(
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.03) 30%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.03) 70%,
+    rgba(0, 0, 0, 0.03)
+  );
+  animation: rotate-border 6s linear infinite;
+  z-index: 0;
+}
+
+.avatar-wrapper .avatar {
+  position: relative;
+  z-index: 1;
+  margin: 2px;
+  overflow: hidden !important;
+}
+
+@keyframes rotate-border {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(50deg); }
+  50%  { transform: rotate(200deg); }
+  75%  { transform: rotate(310deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-wrapper::before {
+    animation: none;
+    background: rgba(0, 0, 0, 0.06);
   }
 }
 

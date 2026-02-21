@@ -84,21 +84,22 @@ function Bio() {
   return (
     <div className="main-bio-container">
       {avatarImage && (
-        <GatsbyImage
-          className="avatar"
-          image={avatarImage}
-          alt={author}
-          style={{
-            marginBottom: '1.25rem',
-            width: 120,
-            height: 120,
-            minWidth: 120,
-            borderRadius: '12px',
-          }}
-          imgStyle={{
-            borderRadius: '12px',
-          }}
-        />
+        <div className="avatar-wrapper">
+          <GatsbyImage
+            className="avatar"
+            image={avatarImage}
+            alt={author}
+            style={{
+              width: 120,
+              height: 120,
+              minWidth: 120,
+              borderRadius: '12px',
+            }}
+            imgStyle={{
+              borderRadius: '12px',
+            }}
+          />
+        </div>
       )}
       <h1>{author}</h1>
       <ul className="horizontal-links">
