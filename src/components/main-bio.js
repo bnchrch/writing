@@ -105,7 +105,7 @@ function Bio({ forThem }) {
         <div className="for-them-message">
           <p>Hey <span className="rainbow-text">Darlings</span>,</p>
           <p>These are all for you.</p>
-          <p className="for-them-signoff">With all my love,<br />Dad</p>
+          <p className="for-them-signoff">- Dad</p>
         </div>
       ) : (
         <>

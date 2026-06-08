@@ -129,7 +129,16 @@
 }
 
 .blog-listing:hover h1 {
-  color: #666;
+  background: linear-gradient(
+    90deg,
+    #ff004c, #ff7a00, #ffd400, #28c76f, #00c2ff, #4d5bff, #b400ff, #ff004c
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rainbow-text-shine 4s linear infinite;
 }
 
 .blog-listing p {
