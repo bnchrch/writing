@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function Bio() {
@@ -41,22 +41,30 @@ function Bio() {
       }}
     >
       {avatarImage && (
-        <GatsbyImage
-          image={avatarImage}
-          alt={author}
+        <Link
+          to="/"
+          aria-label="Home"
           style={{
+            display: 'inline-flex',
             marginRight: '0.875rem',
-            marginBottom: 0,
-            width: 50,
-            height: 50,
-            minWidth: 50,
-            borderRadius: '50%',
-            overflow: 'hidden',
           }}
-          imgStyle={{
-            borderRadius: '50%',
-          }}
-        />
+        >
+          <GatsbyImage
+            image={avatarImage}
+            alt={author}
+            style={{
+              marginBottom: 0,
+              width: 50,
+              height: 50,
+              minWidth: 50,
+              borderRadius: '50%',
+              overflow: 'hidden',
+            }}
+            imgStyle={{
+              borderRadius: '50%',
+            }}
+          />
+        </Link>
       )}
       <p style={{ margin: 0 }}>
         Written by <strong>{author}</strong>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -8,6 +8,8 @@ import MainBio from '../components/main-bio'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
 
 import './blog-listing.css'
+
+const FOR_THEM = 'For them'
 
 const BlogIndexPage = ({ data }) => {
   // Combine MDX and MarkdownRemark nodes
@@ -33,6 +35,12 @@ const BlogIndexPage = ({ data }) => {
     return dateB.getTime() - dateA.getTime();
   });
 
+  // Filter state: 'all' | 'forThem'
+  const [filter, setFilter] = useState('all');
+  const visibleNodes = filter === 'forThem'
+    ? sortedNodes.filter(post => (post.frontmatter.categories || []).includes(FOR_THEM))
+    : sortedNodes;
+
   return (
     <Layout>
       <SEO
@@ -45,7 +53,23 @@ const BlogIndexPage = ({ data }) => {
           <MainBio />
         </aside>
         <div className="homepage-content">
-          {sortedNodes.map(post => (
+          <div className="filter-bar">
+            <button
+              type="button"
+              className={`filter-pill ${filter === 'all' ? 'filter-pill--active' : ''}`}
+              onClick={() => setFilter('all')}
+            >
+              All posts
+            </button>
+            <button
+              type="button"
+              className={`filter-pill ${filter === 'forThem' ? 'filter-pill--active' : ''}`}
+              onClick={() => setFilter('forThem')}
+            >
+              For them
+            </button>
+          </div>
+          {visibleNodes.map(post => (
             <a key={post.fields.slug} href={post.fields.slug} className="blog-listing">
               <h1>{post.frontmatter.title}</h1>
               <p>

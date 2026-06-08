@@ -3,6 +3,7 @@ title: "On Atoms and Knowledge"
 description: "A note to my daughter about physics, and mostly about how to learn: find the small truths that let you rebuild everything else."
 date: "2026-06-08"
 categories:
+  - For them
   - Life
   - Mental Models
 published: true

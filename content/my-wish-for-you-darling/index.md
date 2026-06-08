@@ -3,6 +3,7 @@ title: "On Games and Happiness"
 description: "An open letter to my daughter about happiness, games, and roses."
 date: "2025-09-30"
 categories:
+  - For them
   - Life
   - Mental Models
 published: true

@@ -3,6 +3,7 @@ title: "On Luck"
 description: "An open letter to my daughter on life, luck, and why rolling the dice is the most important thing you can do."
 date: "2026-01-19"
 categories:
+  - For them
   - Life
   - Mental Models
 published: true
