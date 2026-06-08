@@ -62,7 +62,7 @@ const BlogIndexPage = ({ data }) => {
               aria-label="Show only letters for them"
               title="For them"
             >
-              <span role="img" aria-hidden="true">👨‍👩‍👧</span>
+              <span role="img" aria-hidden="true">👧</span>
             </button>
           </div>
           {visibleNodes.map(post => (
