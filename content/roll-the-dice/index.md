@@ -1,6 +1,6 @@
 ---
 title: "On Luck"
-description: "This started as an email to my daughter about why fear holds us back. It turned into a probability argument for why the winning strategy in modern life isn't perfection, it's volume."
+description: "An open letter to my daughter on life, luck, and why rolling the dice is the most important thing you can do."
 date: "2026-01-19"
 categories:
   - Life
