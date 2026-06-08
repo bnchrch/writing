@@ -61,9 +61,11 @@ Do this regularly and you'll catch the drift early. You'll course-correct while 
 
 You can't control reality. But you can control your interpretation of it.
 
-I know how that sounds. Believe me.Your Granny would always remind me
+I know how that sounds. Believe me.
 
-> "The only bad day is the one you choose to have."
+Your Granny would always remind me:
+
+> **"The only bad day is the one you choose to have."**
 
 As a kid it sounded so wrong and it seemed to only make my bad days worse. But over time, I can't help but say "Mom, you were right."
 
@@ -89,9 +91,11 @@ Some people optimize their games for financial security, and trade off creativit
 
 None of these are wrong. But choosing unknowingly, that's the trap.
 
-**Life is a game you choose, so choose purposefully.** Be aware of what you want out of life and then play. Or choose a new game. As your grandfather would say to me:
+**Life is a game you choose, so choose purposefully.** Be aware of what you want out of life and then play. Or choose a new game.
 
-> "If you can't have fun, don't do it."
+As your grandfather would say:
+
+> **"If you can't have fun, don't do it."**
 
 ## The world gives back
 
