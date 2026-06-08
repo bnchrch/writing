@@ -37,6 +37,7 @@ function Bio() {
     <div
       style={{
         display: 'flex',
+        alignItems: 'center',
         marginBottom: '4.375rem',
       }}
     >

@@ -35,9 +35,9 @@ const BlogIndexPage = ({ data }) => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Filter state: 'all' | 'forThem'
-  const [filter, setFilter] = useState('all');
-  const visibleNodes = filter === 'forThem'
+  // Toggle: when on, show only "For them" posts
+  const [forThemOnly, setForThemOnly] = useState(false);
+  const visibleNodes = forThemOnly
     ? sortedNodes.filter(post => (post.frontmatter.categories || []).includes(FOR_THEM))
     : sortedNodes;
 
@@ -56,17 +56,13 @@ const BlogIndexPage = ({ data }) => {
           <div className="filter-bar">
             <button
               type="button"
-              className={`filter-pill ${filter === 'all' ? 'filter-pill--active' : ''}`}
-              onClick={() => setFilter('all')}
+              className={`filter-toggle ${forThemOnly ? 'filter-toggle--active' : ''}`}
+              onClick={() => setForThemOnly(value => !value)}
+              aria-pressed={forThemOnly}
+              aria-label="Show only letters for them"
+              title="For them"
             >
-              All posts
-            </button>
-            <button
-              type="button"
-              className={`filter-pill ${filter === 'forThem' ? 'filter-pill--active' : ''}`}
-              onClick={() => setFilter('forThem')}
-            >
-              For them
+              <span role="img" aria-hidden="true">👨‍👩‍👧</span>
             </button>
           </div>
           {visibleNodes.map(post => (
