@@ -81,9 +81,9 @@ Playing chess. Being a chess master. Being a spouse, a programmer, an investor, 
 
 The real trick is knowing that you are.
 
-Once you see it, you can start to evaluate the games available to you. Their trade-offs. Their costs. And you can find the ones you actually want to play, instead of the ones you fell into by accident or obligation.
+Once you see it, you can start to evaluate the games available to you. Their trade-offs. Their costs. And **you can find the ones you actually want to play, instead of the ones you fell into by accident or obligation**.
 
-And once you realize everyone else is playing a game too (some the same as yours, some different, many without knowing it) then you start to understand, at least a little, why people behave the way they do. Why they hold the opinions they have. Why they make the choices that baffle you.
+And once you realize **everyone else is playing a game too** (some the same as yours, some different, **many without knowing it**) then you start to understand, at least a little, why people behave the way they do. Why they hold the opinions they have. Why they make the choices that baffle you.
 
 Some people optimize their games for financial security, and trade off creativity, fulfillment, or connection. Others optimize for family, health, or adventure. Some do it for recognition. Some optimize for positively impacting others' lives, often at the expense of their own. Some very ambitious people try for all of the above. And some optimize for none, often unknowingly.
 
