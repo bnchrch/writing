@@ -37,6 +37,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-katex',
+            options: {
+              // Don't fail the build on benign LaTeX warnings
+              strict: 'ignore',
+            },
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 700,
@@ -87,6 +94,13 @@ module.exports = {
       options: {
         extensions: ['.mdx'],
         gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-katex',
+            options: {
+              // Don't fail the build on benign LaTeX warnings
+              strict: 'ignore',
+            },
+          },
           {
             resolve: 'gatsby-remark-images',
             options: {

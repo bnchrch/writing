@@ -1,5 +1,5 @@
 ---
-title: "My wish for you, darling"
+title: "On Games and Happiness"
 description: "An open letter to my daughter about happiness, games, and roses."
 date: "2025-09-30"
 categories:

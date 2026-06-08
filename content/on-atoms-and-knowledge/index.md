@@ -1,5 +1,5 @@
 ---
-title: "On Atoms"
+title: "On Atoms and Knowledge"
 description: "A note to my daughter about physics, and mostly about how to learn: find the small truths that let you rebuild everything else."
 date: "2026-06-08"
 categories:
@@ -18,9 +18,9 @@ Your young old man here again. Or, depending on when you read this, maybe just y
 
 Today I want to talk to you about my favorite formula:
 
-```text
-E_start = E_end
-```
+$$
+E_{start} = E_{end}
+$$
 
 The conservation of energy.
 
@@ -42,10 +42,10 @@ In physics, a few atoms might be:
 
 | Atom | Idea | Formula |
 |---|---|---|
-| A | Energy is conserved | `E_start = E_end` |
-| B | Height stores energy | `PE = mgh` |
-| C | Motion stores energy | `KE = 1/2mv²` |
-| D | Springs store energy | `SE = 1/2kx²` |
+| A | Energy is conserved | $E_{start} = E_{end}$ |
+| B | Height stores energy | $PE = mgh$ |
+| C | Motion stores energy | $KE = \tfrac{1}{2}mv^2$ |
+| D | Springs store energy | $SE = \tfrac{1}{2}kx^2$ |
 
 On their own, each atom is useful. But when you combine them, they become molecules of understanding.
 
@@ -57,27 +57,27 @@ Take a roller coaster rolling down a hill, a skier going down a slope, a ball fa
 
 Or:
 
-```text
+$$
 A + B + C
-```
+$$
 
 The elegant version is:
 
-```text
-mgh = 1/2mv²
-```
+$$
+mgh = \tfrac{1}{2}mv^2
+$$
 
 Height energy becomes movement energy. Mass is on both sides, so it cancels:
 
-```text
-gh = 1/2v²
-```
+$$
+gh = \tfrac{1}{2}v^2
+$$
 
 So:
 
-```text
-v = √(2gh)
-```
+$$
+v = \sqrt{2gh}
+$$
 
 That is the shortcut. You do not need to know:
 
@@ -90,15 +90,17 @@ If you know the height, you can find the speed.
 
 But if you do not understand the atom underneath, you might solve it the ugly way, tracking forces and angles down the slope with Newton's laws:
 
-```text
-F = mg sinθ
-F = ma
-a = g sinθ
-s = h / sinθ
-v² = u² + 2as
-v² = 2(g sinθ)(h / sinθ)
-v = √(2gh)
-```
+$$
+\begin{aligned}
+F &= mg\sin\theta \\
+F &= ma \\
+a &= g\sin\theta \\
+s &= h / \sin\theta \\
+v^2 &= u^2 + 2as \\
+v^2 &= 2(g\sin\theta)(h / \sin\theta) \\
+v &= \sqrt{2gh}
+\end{aligned}
+$$
 
 Same answer. Much uglier road. The ugly version carries around forces, angles, acceleration, distance, the equations of motion, trigonometry, substitution, and cancellation. And after all that, you discover the angle never mattered. The path never mattered. The time never mattered. Only the **change in height** mattered.
 
@@ -108,16 +110,18 @@ That is what an atom of knowledge does. It helps you see the thing that matters 
 
 Another molecule might be:
 
-```text
+$$
 A + C + D
-```
+$$
 
 That is a spring launching a toy car. The elegant version is:
 
-```text
-1/2kx² = 1/2mv²
-v = x√(k/m)
-```
+$$
+\begin{aligned}
+\tfrac{1}{2}kx^2 &= \tfrac{1}{2}mv^2 \\
+v &= x\sqrt{k/m}
+\end{aligned}
+$$
 
 Spring energy becomes movement energy.
 
@@ -125,11 +129,13 @@ Simple. Beautiful.
 
 The ugly way is to track the spring's force at every tiny moment, using Hooke's law:
 
-```text
-F = kx
-F = ma
-a = kx / m
-```
+$$
+\begin{aligned}
+F &= kx \\
+F &= ma \\
+a &= kx / m
+\end{aligned}
+$$
 
 But `x` keeps changing as the spring expands. So the force changes, which means the acceleration changes, which means the velocity changes, which means the position changes, which means the force changes again. Now you are stuck describing a system where force, position, acceleration, and velocity are all moving together. Not impossible. Just messier.
 
@@ -188,7 +194,7 @@ The atoms might be:
 
 A light switch has state: on or off. A bank account has state: how much money is in it. A game has state: where the player is, how much health they have, what level they are on. A program is often just state being transformed:
 
-```text
+```js
 name = "Paige"
 name = name.toUpperCase()
 ```
