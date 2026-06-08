@@ -47,6 +47,7 @@ function Bio() {
           aria-label="Home"
           style={{
             display: 'inline-flex',
+            marginTop: 0,
             marginRight: '0.875rem',
           }}
         >
