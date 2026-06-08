@@ -61,9 +61,13 @@ Do this regularly and you'll catch the drift early. You'll course-correct while 
 
 You can't control reality. But you can control your interpretation of it.
 
-I know how that sounds. Believe me. But stick with me.
+I know how that sounds. Believe me.Your Granny would always remind me
 
-There's a silver lining to almost everything if you look for it. A failed project teaches you what not to build next time. A hard conversation strengthens a relationship. A terrible day makes the good ones feel earned.
+> "The only bad day is the one you choose to have."
+
+As a kid it sounded so wrong and it seemed to only make my bad days worse. But over time, I can't help but say "Mom, you were right."
+
+You see, there's a silver lining to almost everything if you look for it. A failed project teaches you what not to build next time. A hard conversation strengthens a relationship. A terrible day makes the good ones feel earned.
 
 This isn't toxic positivity. I'm not saying "just think happy thoughts." Some days are genuinely awful and they deserve to be felt fully. But the practice of looking, actively looking, for what you can take from a situation changes the texture of your life over time.
 
@@ -85,7 +89,9 @@ Some people optimize their games for financial security, and trade off creativit
 
 None of these are wrong. But choosing unknowingly, that's the trap.
 
-**Life is a game you choose, so choose purposefully.** Be aware of what you want out of life and then play. Or choose a new game. As your grandfather would say to me: "If you can't have fun, don't do it."
+**Life is a game you choose, so choose purposefully.** Be aware of what you want out of life and then play. Or choose a new game. As your grandfather would say to me:
+
+> "If you can't have fun, don't do it."
 
 ## The world gives back
 
