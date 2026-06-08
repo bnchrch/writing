@@ -51,44 +51,9 @@ On their own, each atom is useful. But when you combine them, they become molecu
 
 ## Molecule 1: height becomes speed
 
-Take a roller coaster rolling down a hill, a skier going down a slope, a ball falling from a window, or a pendulum swinging downward. At first those look like different problems. But underneath, they are often the same molecule:
+Take a roller coaster rolling down a hill, a skier going down a slope, a ball falling from a window, or a pendulum swinging downward. At first those look like different problems. Say you just want the speed at the bottom, and you have forgotten there is an atom underneath.
 
-> **Conservation of energy + height energy + motion energy**
-
-Or:
-
-$$
-A + B + C
-$$
-
-The elegant version is:
-
-$$
-mgh = \tfrac{1}{2}mv^2
-$$
-
-Height energy becomes movement energy. Mass is on both sides, so it cancels:
-
-$$
-gh = \tfrac{1}{2}v^2
-$$
-
-So:
-
-$$
-v = \sqrt{2gh}
-$$
-
-That is the shortcut. You do not need to know:
-
-- the shape of the hill
-- how long the fall took
-- how heavy the object is
-- the exact path it traveled
-
-If you know the height, you can find the speed.
-
-But if you do not understand the atom underneath, you might solve it the ugly way, tracking forces and angles down the slope with Newton's laws:
+So you do the honest, exhausting thing. You track the forces down the slope with Newton's laws:
 
 $$
 \begin{aligned}
@@ -102,32 +67,45 @@ v &= \sqrt{2gh}
 \end{aligned}
 $$
 
-Same answer. Much uglier road. The ugly version carries around forces, angles, acceleration, distance, the equations of motion, trigonometry, substitution, and cancellation. And after all that, you discover the angle never mattered. The path never mattered. The time never mattered. Only the **change in height** mattered.
+Look at everything that road made you carry: forces, angles, acceleration, distance, the equations of motion, trigonometry, substitution, and cancellation. And after all of it, you discover the angle never mattered. The path never mattered. The time never mattered. Only the **change in height** mattered.
+
+Now remember the atoms. Underneath, all four of those scenes are the same molecule:
+
+> **Conservation of energy + height energy + motion energy**
+
+Or:
+
+$$
+A + B + C
+$$
+
+Which is just height energy becoming movement energy:
+
+$$
+mgh = \tfrac{1}{2}mv^2
+$$
+
+Mass is on both sides, so it cancels:
+
+$$
+gh = \tfrac{1}{2}v^2
+$$
+
+So:
+
+$$
+v = \sqrt{2gh}
+$$
+
+Same answer. A much shorter road. And this time you never needed the shape of the hill, how long the fall took, how heavy the object is, or the exact path it traveled. If you know the height, you know the speed.
 
 That is what an atom of knowledge does. It helps you see the thing that matters sooner. This is not a trick I invented, by the way. It is the whole reason physicists invented energy methods: a way to skip the moment-by-moment forces and ask only what the system had at the start and where it went by the end.
 
 ## Molecule 2: spring becomes speed
 
-Another molecule might be:
+Another one: a spring launching a toy car.
 
-$$
-A + C + D
-$$
-
-That is a spring launching a toy car. The elegant version is:
-
-$$
-\begin{aligned}
-\tfrac{1}{2}kx^2 &= \tfrac{1}{2}mv^2 \\
-v &= x\sqrt{k/m}
-\end{aligned}
-$$
-
-Spring energy becomes movement energy.
-
-Simple. Beautiful.
-
-The ugly way is to track the spring's force at every tiny moment, using Hooke's law:
+Forget the atom again and you are back to going moment by moment. The spring's force follows Hooke's law:
 
 $$
 \begin{aligned}
@@ -137,9 +115,26 @@ a &= kx / m
 \end{aligned}
 $$
 
-But `x` keeps changing as the spring expands. So the force changes, which means the acceleration changes, which means the velocity changes, which means the position changes, which means the force changes again. Now you are stuck describing a system where force, position, acceleration, and velocity are all moving together. Not impossible. Just messier.
+But `x` keeps changing as the spring expands. So the force changes, which means the acceleration changes, which means the velocity changes, which means the position changes, which means the force changes again. Now you are describing a system where force, position, acceleration, and velocity are all moving together. Not impossible. Just messy.
 
-The energy version says: I do not need to know every tiny moment. I just need to know what energy was stored at the start, and where it went by the end.
+The atoms cut straight through it:
+
+$$
+A + C + D
+$$
+
+Spring energy becomes movement energy:
+
+$$
+\begin{aligned}
+\tfrac{1}{2}kx^2 &= \tfrac{1}{2}mv^2 \\
+v &= x\sqrt{k/m}
+\end{aligned}
+$$
+
+Simple. Beautiful.
+
+I do not need to know every tiny moment. I just need to know what energy was stored at the start, and where it went by the end.
 
 Spring energy became motion. Done.
 
