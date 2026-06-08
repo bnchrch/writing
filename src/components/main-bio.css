@@ -7,6 +7,42 @@
   padding: 100px;
 }
 
+/* "For them" letter message */
+.for-them-message {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+.for-them-signoff {
+  margin-top: 1.25rem;
+}
+
+.rainbow-text {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #ff004c, #ff7a00, #ffd400, #28c76f, #00c2ff, #4d5bff, #b400ff, #ff004c
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rainbow-text-shine 4s linear infinite;
+}
+
+@keyframes rainbow-text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-text {
+    animation: none;
+  }
+}
+
 .main-bio-container h1 {
   margin-top: 0;
   margin-bottom: 0.75rem;

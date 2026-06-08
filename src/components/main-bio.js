@@ -46,7 +46,7 @@ const socialIcons = {
   ),
 }
 
-function Bio() {
+function Bio({ forThem }) {
   const { site, avatar } = useStaticQuery(
     graphql`
       query MainBioQuery {
@@ -101,24 +101,34 @@ function Bio() {
           />
         </div>
       )}
-      <h1>{author}</h1>
-      <ul className="horizontal-links">
-        {Object.keys(social).map(s =>
-          social[s] ? (
-            <li key={s}>
-              <a
-                aria-label={`${s} profile`}
-                className="u-no-box-shadow"
-                href={`${socialURLs[s]}/${social[s]}`}
-              >
-                {socialIcons[s]}
-              </a>
-            </li>
-          ) : null
-        )}
-      </ul>
-      <p>{bio}</p>
-      <p>If you want to know more about what I'm up to, check out <a href="https://ben.church">my website</a></p>
+      {forThem ? (
+        <div className="for-them-message">
+          <p>Hey <span className="rainbow-text">Darlings</span>,</p>
+          <p>These are all for you.</p>
+          <p className="for-them-signoff">With all my love,<br />Dad</p>
+        </div>
+      ) : (
+        <>
+          <h1>{author}</h1>
+          <ul className="horizontal-links">
+            {Object.keys(social).map(s =>
+              social[s] ? (
+                <li key={s}>
+                  <a
+                    aria-label={`${s} profile`}
+                    className="u-no-box-shadow"
+                    href={`${socialURLs[s]}/${social[s]}`}
+                  >
+                    {socialIcons[s]}
+                  </a>
+                </li>
+              ) : null
+            )}
+          </ul>
+          <p>{bio}</p>
+          <p>If you want to know more about what I'm up to, check out <a href="https://ben.church">my website</a></p>
+        </>
+      )}
     </div>
   )
 }

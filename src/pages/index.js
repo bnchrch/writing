@@ -74,9 +74,9 @@ const BlogIndexPage = ({ data }) => {
         keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']}
         canonicalLink={null}
       />
-      <div className={`homepage-layout ${forThemOnly ? 'hearts-cursor' : ''}`}>
+      <div className={`homepage-layout ${forThemOnly ? 'for-them-mode' : ''}`}>
         <aside className="homepage-sidebar">
-          <MainBio />
+          <MainBio forThem={forThemOnly} />
         </aside>
         <div className="homepage-content">
           <div className="filter-bar">
@@ -88,7 +88,7 @@ const BlogIndexPage = ({ data }) => {
               aria-label="Show only letters for them"
               title="For them"
             >
-              <span role="img" aria-hidden="true">👧</span>
+              <span className="emoji" role="img" aria-hidden="true">👧</span>
             </button>
           </div>
           {visibleNodes.map(post => (
