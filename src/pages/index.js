@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -10,6 +10,8 @@ import { formatPostDate, formatReadingTime } from '../utils/dates'
 import './blog-listing.css'
 
 const FOR_THEM = 'For them'
+const FILTER_PARAM = 'filter'
+const FOR_THEM_VALUE = 'for-them'
 
 const BlogIndexPage = ({ data }) => {
   // Combine MDX and MarkdownRemark nodes
@@ -35,8 +37,32 @@ const BlogIndexPage = ({ data }) => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Toggle: when on, show only "For them" posts
+  // Toggle: when on, show only "For them" posts. Backed by a ?filter=for-them
+  // query param so the state is shareable and survives reloads.
   const [forThemOnly, setForThemOnly] = useState(false);
+
+  // Read the initial state from the URL after mount (avoids SSR hydration mismatch)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setForThemOnly(params.get(FILTER_PARAM) === FOR_THEM_VALUE);
+  }, []);
+
+  const toggleForThem = () => {
+    setForThemOnly(prev => {
+      const next = !prev;
+      const params = new URLSearchParams(window.location.search);
+      if (next) {
+        params.set(FILTER_PARAM, FOR_THEM_VALUE);
+      } else {
+        params.delete(FILTER_PARAM);
+      }
+      const query = params.toString();
+      const url = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+      window.history.replaceState(null, '', url);
+      return next;
+    });
+  };
+
   const visibleNodes = forThemOnly
     ? sortedNodes.filter(post => (post.frontmatter.categories || []).includes(FOR_THEM))
     : sortedNodes;
@@ -48,7 +74,7 @@ const BlogIndexPage = ({ data }) => {
         keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']}
         canonicalLink={null}
       />
-      <div className="homepage-layout">
+      <div className={`homepage-layout ${forThemOnly ? 'hearts-cursor' : ''}`}>
         <aside className="homepage-sidebar">
           <MainBio />
         </aside>
@@ -57,7 +83,7 @@ const BlogIndexPage = ({ data }) => {
             <button
               type="button"
               className={`filter-toggle ${forThemOnly ? 'filter-toggle--active' : ''}`}
-              onClick={() => setForThemOnly(value => !value)}
+              onClick={toggleForThem}
               aria-pressed={forThemOnly}
               aria-label="Show only letters for them"
               title="For them"
