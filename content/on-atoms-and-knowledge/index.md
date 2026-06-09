@@ -33,11 +33,24 @@ I'll come back to this one. But let me start somewhere you have already been, wi
 
 You can't memorize how to say every word. The Oxford English Dictionary lists more than 170,000 of them in current use, and people make up new ones all the time. So nobody tried to hand you all of them. Instead, someone taught you the sounds of just twenty-six letters. And the first time you saw a word you had never seen before, something like *galumphing* or *persimmon*, you could already say it out loud.
 
+The numbers behind that are almost funny:
+
+| Letters | Sounds | Words in English | Languages using the alphabet |
+|---|---|---|---|
+| 26 | 44 | 170,000+ | 3,000+ |
+
+- **Can you memorize every word in English?** Probably not.
+- **Can you memorize every word in every language that uses the alphabet?** Definitely not.
+- **Can you memorize all twenty-six letters and their sounds?** Most kids manage it by grade two.
+- **Can you say a word you have never heard before?** Only if you know the alphabet.
+
 Nobody taught you that word. You built it yourself, out of letters.
 
 That is an **atom of knowledge**. The letters are the atoms. The words are the molecules. Twenty-six is a lot easier to remember than 170,000, and that is the whole bargain: you learned twenty-six small things instead of memorizing every word one at a time, and in return you can say any word there is, including the ones nobody has invented yet.
 
-And those same twenty-six letters do not stop at English. The Latin alphabet is the most widely used writing system on Earth, used to write more than 3,000 other languages. So the moment you could sound out letters, you could already begin to sound out Spanish, or Italian, or Swahili, even words you have never heard. The atoms you learned for one language carried straight into the others. That is the first thing to notice about atoms: the good ones travel.
+That is the real prize hiding in the alphabet, and it is not really about reading. You will never fully know a field by memorizing it. There are always more molecules than you can carry, and the pile keeps growing while you sleep. But you can know its atoms, and knowing a few atoms cold is far easier than memorizing the mountain of things they build. Better still, atoms travel. The same twenty-six letters are used to write more than 3,000 other languages, so the day you learned to sound out English you had already half-learned to sound out Spanish, Italian, and Swahili. Learn the atoms of one world and you walk into the next one already knowing how to begin.
+
+Atomic knowledge compounds.
 
 More generally, an atom is a small truth that helps you derive bigger truths. Atoms matter because they reduce the number of things you have to simply "remember."
 
