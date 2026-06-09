@@ -50,6 +50,20 @@ In physics, a few atoms might be:
 
 On their own, each atom is useful. But when you combine them, they become molecules of understanding.
 
+## Why bother? It is harder than memorizing
+
+It is. But it is worth it.
+
+Memorizing is easy today and exhausting forever: you collect molecule after molecule and have to carry every single one. Learning the atoms costs more up front, then pays you back for the rest of your life. Three reasons:
+
+- **You carry less.** A handful of atoms can rebuild dozens of molecules. Learn four ideas about energy and you can derive the speed of a roller coaster, a ramp, a pendulum, and a spring — formulas you would otherwise memorize one at a time.
+- **You can rebuild what you forget.** You will forget almost everything you memorize. You can never forget how to rebuild it. A molecule you lose is gone; an atom you keep makes the molecule again.
+- **The atoms travel.** Memorize physics and you know physics. Understand its atoms and you walk into chemistry, biology, even people already half-fluent. Molecules stay home; atoms come with you.
+
+So memorizing is renting answers: cheap this week, and you pay again every week after. Learning the atoms is owning them.
+
+Memorize the molecules and you have to carry all of them. Learn the atoms and you can build any of them.
+
 ## The same trick, everywhere
 
 The reason I love atoms so much is that this move — small truths combining into bigger ones — is not a physics thing. It shows up almost everywhere. So as you grow up, I hope you do not worry too much about whether you are a "math person," a "science person," a "creative person," or a "people person." Those categories are mostly fake. What matters is learning how to find the atoms in whatever world you are drawn to.
@@ -112,7 +126,7 @@ $$
 v = \sqrt{2gh}
 $$
 
-Same answer. A much shorter road. And this time you never needed the shape of the hill, how long the fall took, how heavy the object is, or the exact path it traveled. If you know the height, you know the speed.
+Same answer. A much shorter road. And this time you never needed the shape of the hill, how long the fall took, how heavy the object is, or the exact path it traveled. If you know the height, you know the speed. And if you ever forget $v = \sqrt{2gh}$, it does not matter — you just rebuilt it from the atoms in three lines.
 
 That is what an atom of knowledge does. It helps you see the thing that matters sooner. This is not a trick I invented, by the way. It is the whole reason physicists invented energy methods: a way to skip the moment-by-moment forces and ask only what the system had at the start and where it went by the end.
 
@@ -209,20 +223,8 @@ The atoms might be:
 A light switch has state: on or off. A bank account has state: how much money is in it. A game has state: where the player is, how much health they have, what level they are on. A program is often just state being transformed:
 
 ```js
-name = "Paige"
-name = name.toUpperCase()
-```
-
-The state changed from:
-
-```text
-"Paige"
-```
-
-to:
-
-```text
-"PAIGE"
+name = "Paige"             // state
+name = name.toUpperCase()  // transformation: "Paige" → "PAIGE"
 ```
 
 Tiny example. Huge idea. Computer scientists have real names for both halves. A thing that holds a state and moves between states by rules is a **finite state machine**, and a light switch is the simplest one there is. A transformation that takes a value and hands back a new one without secretly changing anything else is a **pure function**, and that habit of not mutating the old thing is called **immutability**. You do not need the jargon to use the idea, but it is nice to know the idea has a name.
@@ -262,31 +264,22 @@ Some of these are studied laws of persuasion with real evidence behind them. Rec
 | Molecule | Atoms inside it | What it really does |
 |---|---|---|
 | **Bring a thoughtful gift to a prospect** | Reciprocity + attention | Gives value before asking for value |
-| **Send a useful insight before the meeting** | Reciprocity + trust | Proves you can help before you sell |
-| **Open with research about them** | Attention + status | Makes them feel like a person, not a lead |
-| **Use their words back to them** | Attention + trust | Shows you actually listened |
 | **Ask permission before giving advice** | Autonomy + dignity | Lowers defensiveness |
 | **Disagree by first proving you understand** | Attention + dignity | Makes disagreement feel respectful |
 | **Give them a graceful out** | Dignity + autonomy | Lets them change course without feeling trapped |
-| **Make your champion look smart** | Status + incentive + reciprocity | Helps them win inside their own tribe |
-| **Tell a story about someone like them** | Narrative + social proof | Makes the idea feel familiar and less risky |
-| **Send a crisp recap** | Trust + attention | Proves you listened and creates shared memory |
-| **Admit what your product cannot do** | Trust + authority | Builds credibility by not overreaching |
 | **Make the next step tiny and obvious** | Autonomy + trust | Lowers friction |
 
 The trick is not "bring a gift." The atom is **reciprocity**, and a gift is just one molecule that falls out of it. The gift does not even have to be wine or swag. It can be a useful introduction, a thoughtful question, a benchmark, a teardown, or an idea they can use even if they never buy.
 
 The trick is not "repeat their point back before disagreeing." The atoms are **attention** and **dignity**. People do not always need to win, but they usually need to feel heard. If they feel ignored, embarrassed, or cornered, they defend. If they feel understood, they can think.
 
-That is why good sales and good leadership are not really about tricks. They are about understanding people clearly enough to act with care. A prospect is a person trying not to waste money, lose status, back the wrong idea, annoy their boss, disappoint their team, or create more work for themselves. Almost all of that is one atom, **loss aversion**: we feel a loss far more sharply than the same-sized gain, so most of the time people are protecting against losing more than they are reaching for winning. A teammate is the same kind of person, trying to do good work, be respected, avoid embarrassment, grow, belong, and feel that their effort matters.
+That is why good sales and good leadership are not really about tricks. They are about understanding people clearly enough to act with care. A prospect is a person trying not to waste money, lose status, or back the wrong idea — and almost all of that is one atom, **loss aversion**: we feel a loss far more sharply than the same-sized gain, so most of the time people are protecting against losing more than they are reaching for winning.
 
 Once you see the atoms, the molecules become easier to read:
 
 - **Listening** is attention + dignity.
 - **Leadership** is trust + direction + status.
-- **Persuasion** is incentive + dignity + timing.
 - **Friendship** is attention + trust + reciprocity.
-- **Repair** is dignity + responsibility + changed behavior.
 - **Love** is attention + trust + repeated care.
 
 Again and again, the work is the same:
@@ -345,10 +338,8 @@ Whatever you love, look for the atoms.
 
 The subject almost does not matter. The pattern is the same. Do not just collect the leaves; find the roots. Do not just memorize the molecules; find the atoms.
 
-Because once you understand the atoms, the world becomes less overwhelming. You can rebuild what you forget, recognize the same truth in a new costume, and walk into a strange field and start asking useful questions. And that is one of the most powerful feelings in the world. Not knowing everything. Knowing how to begin.
+Because once you understand the atoms, the world gets lighter. You can rebuild what you forget, recognize an old truth in a new costume, and walk into a strange field already knowing how to begin. That is why conservation of energy became my favorite formula: not because it made me good at physics, but because it taught me what understanding feels like.
 
 * * *
 
-That is why conservation of energy became my favorite formula. Not because it made me good at physics, though it helped, but because it taught me what understanding feels like. It feels like the world getting lighter. It feels like a messy problem becoming simple. It feels like realizing that a hundred things you thought were different were connected all along.
-
-And that, my darling, is one of the great joys of learning. Not memorizing everything. Finding the little truths that help you understand almost anything.
+So do not try to carry everything, my darling. Find the few small truths that let you build the rest — that is one of the great joys of learning. Memorize the molecules and you have to carry all of them. Learn the atoms, and you can build any of them.
