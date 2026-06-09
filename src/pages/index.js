@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -12,6 +12,7 @@ import './blog-listing.css'
 const FOR_THEM = 'For them'
 const FILTER_PARAM = 'filter'
 const FOR_THEM_VALUE = 'for-them'
+const FOR_THEM_EMOJIS = ['♥️', '🌈', '🦄', '🏎️', '🐰', '🐈', '🐕', '🎈', '🛝', '🫧']
 
 const BlogIndexPage = ({ data }) => {
   // Combine MDX and MarkdownRemark nodes
@@ -67,6 +68,41 @@ const BlogIndexPage = ({ data }) => {
     ? sortedNodes.filter(post => (post.frontmatter.categories || []).includes(FOR_THEM))
     : sortedNodes;
 
+  // "For them" delight: a random emoji cursor (per page load) plus a hovered
+  // title that appends the next emoji in the cycle.
+  const emojiIndex = useRef(0);
+  const [hoverEmoji, setHoverEmoji] = useState({ slug: null, emoji: '' });
+  const [forThemCursor, setForThemCursor] = useState(null);
+
+  useEffect(() => {
+    // Random starting point so the first appended emoji differs each load.
+    emojiIndex.current = Math.floor(Math.random() * FOR_THEM_EMOJIS.length);
+
+    // Render a random emoji onto a canvas and use the PNG as the cursor
+    // (reliable across browsers, unlike emoji inside an SVG cursor).
+    const emoji = FOR_THEM_EMOJIS[Math.floor(Math.random() * FOR_THEM_EMOJIS.length)];
+    const size = 32;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      ctx.font = '26px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(emoji, size / 2, size / 2 + 1);
+      setForThemCursor(`url(${canvas.toDataURL('image/png')}) 16 16, pointer`);
+    }
+  }, []);
+
+  const handlePostEnter = slug => {
+    if (!forThemOnly) return;
+    const emoji = FOR_THEM_EMOJIS[emojiIndex.current % FOR_THEM_EMOJIS.length];
+    emojiIndex.current += 1;
+    setHoverEmoji({ slug, emoji });
+  };
+  const handlePostLeave = () => setHoverEmoji({ slug: null, emoji: '' });
+
   return (
     <Layout>
       <SEO
@@ -74,7 +110,10 @@ const BlogIndexPage = ({ data }) => {
         keywords={['elixir', 'javascript', 'react-native', 'remote', 'digital nomad', 'golang', 'go', 'python', 'swift', 'react']}
         canonicalLink={null}
       />
-      <div className={`homepage-layout ${forThemOnly ? 'for-them-mode' : ''}`}>
+      <div
+        className={`homepage-layout ${forThemOnly ? 'for-them-mode' : ''}`}
+        style={forThemCursor ? { '--for-them-cursor': forThemCursor } : undefined}
+      >
         <aside className="homepage-sidebar">
           <MainBio forThem={forThemOnly} />
         </aside>
@@ -92,8 +131,19 @@ const BlogIndexPage = ({ data }) => {
             </button>
           </div>
           {visibleNodes.map(post => (
-            <a key={post.fields.slug} href={post.fields.slug} className="blog-listing">
-              <h1>{post.frontmatter.title}</h1>
+            <a
+              key={post.fields.slug}
+              href={post.fields.slug}
+              className="blog-listing"
+              onMouseEnter={() => handlePostEnter(post.fields.slug)}
+              onMouseLeave={handlePostLeave}
+            >
+              <h1>
+                {post.frontmatter.title}
+                {forThemOnly && hoverEmoji.slug === post.fields.slug && hoverEmoji.emoji && (
+                  <span className="hover-emoji"> {hoverEmoji.emoji}</span>
+                )}
+              </h1>
               <p>
                 {formatPostDate(post.frontmatter.date)}
                 {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
