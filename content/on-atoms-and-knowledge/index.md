@@ -31,6 +31,8 @@ I'll come back to this one. But let me start somewhere you have already been, wi
 
 ## What I mean by atoms
 
+An atom of knowledge is a small truth that lets you derive bigger ones. Learn a handful and you can rebuild far more than you could ever memorize one piece at a time. Start with the example you already know best: letters.
+
 You can't memorize how to say every word. The Oxford English Dictionary lists more than 170,000 of them in current use, and people make up new ones all the time. So nobody tried to hand you all of them. Instead, someone taught you the sounds of just twenty-six letters. And the first time you saw a word you had never seen before, something like *galumphing* or *persimmon*, you could already say it out loud.
 
 The numbers behind that are almost funny:
@@ -48,13 +50,7 @@ Nobody taught you that word. You built it yourself, out of letters.
 
 That is an **atom of knowledge**. The letters are the atoms. The words are the molecules. Twenty-six is a lot easier to remember than 170,000, and that is the whole bargain: you learned twenty-six small things instead of memorizing every word one at a time, and in return you can say any word there is, including the ones nobody has invented yet.
 
-That is the real prize hiding in the alphabet, and it is not really about reading. You will never fully know a field by memorizing it. There are always more molecules than you can carry, and the pile keeps growing while you sleep. But you can know its atoms, and knowing a few atoms cold is far easier than memorizing the mountain of things they build. Better still, atoms travel. The same twenty-six letters are used to write more than 3,000 other languages, so the day you learned to sound out English you had already half-learned to sound out Spanish, Italian, and Swahili. Learn the atoms of one world and you walk into the next one already knowing how to begin.
-
-Atomic knowledge compounds.
-
-More generally, an atom is a small truth that helps you derive bigger truths. Atoms matter because they reduce the number of things you have to simply "remember."
-
-Knowledge works a bit like chemistry:
+That stacking, small things combining into bigger ones, has a shape worth naming. Knowledge works a bit like chemistry:
 
 | Level | Meaning |
 |---|---|
@@ -72,7 +68,7 @@ Memorizing is easy today and exhausting forever: you collect molecule after mole
 
 - **You carry less.** A handful of atoms can rebuild dozens of molecules. You never memorized every word in the language, and you never had to: twenty-six letters carry all of them. Learn four ideas about energy and you can derive the speed of a roller coaster, a ramp, a pendulum, and a spring, formulas you would otherwise memorize one at a time.
 - **You can rebuild what you forget.** You will forget almost everything you memorize. You can never forget how to rebuild it. A molecule you lose is gone; an atom you keep makes the molecule again.
-- **The atoms travel.** Memorize physics and you know physics. Understand its atoms and you walk into chemistry, biology, even people already half-fluent. Molecules stay home; atoms come with you.
+- **The atoms travel.** You saw it in the table: twenty-six letters spread across more than 3,000 languages, so learning to sound out English half-taught you Spanish, Italian, and Swahili. Ideas work the same way. Memorize physics and you know physics; understand its atoms and you walk into chemistry, biology, even people already half-fluent. Molecules stay home; atoms come with you.
 
 So memorizing is renting answers: cheap this week, and you pay again every week after. Learning the atoms is owning them.
 
