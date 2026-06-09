@@ -25,11 +25,19 @@ $$
 
 The conservation of energy.
 
-Not because I prefer being sloth-like, or because I love shortcuts, though to be fair both are true. I love it because it was my first favorite **atom of knowledge**. And I think atoms are one of the most important things you can learn to look for.
+Not because I prefer being sloth-like, or because I love shortcuts, though to be fair both are true. I love it because it was my first favorite **atom of knowledge**. And atoms are one of the most important things you can learn to look for.
+
+I'll come back to this one. But let me start somewhere you have already been, with an atom you mastered before you could even read this letter.
 
 ## What I mean by atoms
 
-An **atom of knowledge** is a small truth that helps you derive bigger truths. They matter because they reduce the number of things you have to simply "remember."
+You can't memorize how to say every word. There are too many of them, and people make up new ones all the time. So nobody tried. Instead, someone taught you the sounds of just twenty-six letters. And the first time you saw a word you had never seen before, something like *galumphing* or *persimmon*, you could already say it out loud.
+
+Nobody taught you that word. You built it yourself, out of letters.
+
+That is an **atom of knowledge**. The letters are the atoms. The words are the molecules. You learned twenty-six small things instead of a million big ones, and in return you can say any word there is, including the ones nobody has invented yet.
+
+More generally, an atom is a small truth that helps you derive bigger truths. Atoms matter because they reduce the number of things you have to simply "remember."
 
 Knowledge works a bit like chemistry:
 
@@ -39,15 +47,6 @@ Knowledge works a bit like chemistry:
 | **Molecules** | Combinations of those truths |
 | **Structures** | Bigger systems built from those combinations |
 
-In physics, a few atoms might be:
-
-| Atom | Idea | Formula |
-|---|---|---|
-| A | Energy is conserved | $E_{start} = E_{end}$ |
-| B | Height stores energy | $PE = mgh$ |
-| C | Motion stores energy | $KE = \tfrac{1}{2}mv^2$ |
-| D | Springs store energy | $SE = \tfrac{1}{2}kx^2$ |
-
 On their own, each atom is useful. But when you combine them, they become molecules of understanding.
 
 ## Why bother? It is harder than memorizing
@@ -56,7 +55,7 @@ It is. But it is worth it.
 
 Memorizing is easy today and exhausting forever: you collect molecule after molecule and have to carry every single one. Learning the atoms costs more up front, then pays you back for the rest of your life. Three reasons:
 
-- **You carry less.** A handful of atoms can rebuild dozens of molecules. Learn four ideas about energy and you can derive the speed of a roller coaster, a ramp, a pendulum, and a spring — formulas you would otherwise memorize one at a time.
+- **You carry less.** A handful of atoms can rebuild dozens of molecules. You never memorized every word in the language, and you never had to: twenty-six letters carry all of them. Learn four ideas about energy and you can derive the speed of a roller coaster, a ramp, a pendulum, and a spring, formulas you would otherwise memorize one at a time.
 - **You can rebuild what you forget.** You will forget almost everything you memorize. You can never forget how to rebuild it. A molecule you lose is gone; an atom you keep makes the molecule again.
 - **The atoms travel.** Memorize physics and you know physics. Understand its atoms and you walk into chemistry, biology, even people already half-fluent. Molecules stay home; atoms come with you.
 
@@ -66,9 +65,9 @@ Memorize the molecules and you have to carry all of them. Learn the atoms and yo
 
 ## The same trick, everywhere
 
-The reason I love atoms so much is that this move — small truths combining into bigger ones — is not a physics thing. It shows up almost everywhere. So as you grow up, I hope you do not worry too much about whether you are a "math person," a "science person," a "creative person," or a "people person." Those categories are mostly fake. What matters is learning how to find the atoms in whatever world you are drawn to.
+The reason I love atoms so much is that this move, small truths combining into bigger ones, is not a physics thing. It shows up almost everywhere. So as you grow up, I hope you do not worry too much about whether you are a "math person," a "science person," a "creative person," or a "people person." Those categories are mostly fake. What matters is learning how to find the atoms in whatever world you are drawn to.
 
-Below are a few of those worlds. Start with the one you love most — but peek at the others too, because the *pattern* is the point: different costumes, same atoms.
+Below are a few of those worlds. Start with the one you love most, but peek at the others too, because the *pattern* is the point: different costumes, same atoms.
 
 <div class="atom-tabs" data-default="Physics">
 
@@ -76,7 +75,16 @@ Below are a few of those worlds. Start with the one you love most — but peek a
 
 ## If you love physics
 
-Let me start with the world that taught me all of this.
+This is the world that taught me all of this. Here are four of its atoms:
+
+| Atom | Idea | Formula |
+|---|---|---|
+| A | Energy is conserved | $E_{start} = E_{end}$ |
+| B | Height stores energy | $PE = mgh$ |
+| C | Motion stores energy | $KE = \tfrac{1}{2}mv^2$ |
+| D | Springs store energy | $SE = \tfrac{1}{2}kx^2$ |
+
+Each one is useful on its own. The interesting part is what happens when you combine them.
 
 ### Molecule 1: height becomes speed
 
@@ -126,7 +134,7 @@ $$
 v = \sqrt{2gh}
 $$
 
-Same answer. A much shorter road. And this time you never needed the shape of the hill, how long the fall took, how heavy the object is, or the exact path it traveled. If you know the height, you know the speed. And if you ever forget $v = \sqrt{2gh}$, it does not matter — you just rebuilt it from the atoms in three lines.
+Same answer. A much shorter road. And this time you never needed the shape of the hill, how long the fall took, how heavy the object is, or the exact path it traveled. If you know the height, you know the speed. And if you ever forget $v = \sqrt{2gh}$, it does not matter. You just rebuilt it from the atoms in three lines.
 
 That is what an atom of knowledge does. It helps you see the thing that matters sooner. This is not a trick I invented, by the way. It is the whole reason physicists invented energy methods: a way to skip the moment-by-moment forces and ask only what the system had at the start and where it went by the end.
 
@@ -273,7 +281,7 @@ The trick is not "bring a gift." The atom is **reciprocity**, and a gift is just
 
 The trick is not "repeat their point back before disagreeing." The atoms are **attention** and **dignity**. People do not always need to win, but they usually need to feel heard. If they feel ignored, embarrassed, or cornered, they defend. If they feel understood, they can think.
 
-That is why good sales and good leadership are not really about tricks. They are about understanding people clearly enough to act with care. A prospect is a person trying not to waste money, lose status, or back the wrong idea — and almost all of that is one atom, **loss aversion**: we feel a loss far more sharply than the same-sized gain, so most of the time people are protecting against losing more than they are reaching for winning.
+That is why good sales and good leadership are not really about tricks. They are about understanding people clearly enough to act with care. A prospect is a person trying not to waste money, lose status, or back the wrong idea. And almost all of that is one atom, **loss aversion**: we feel a loss far more sharply than the same-sized gain, so most of the time people are protecting against losing more than they are reaching for winning.
 
 Once you see the atoms, the molecules become easier to read:
 
@@ -330,6 +338,7 @@ Whatever you love, look for the atoms.
 
 | Field | Some atoms to look for |
 |---|---|
+| **Reading** | Letters and the sounds they make |
 | **Design** | Color, contrast, proportion, hierarchy, repetition, alignment, proximity, whitespace |
 | **Programming** | State, transformation |
 | **People** | Attention, status, dignity, incentive, trust, autonomy, reciprocity, emotion, narrative |
@@ -342,4 +351,4 @@ Because once you understand the atoms, the world gets lighter. You can rebuild w
 
 * * *
 
-So do not try to carry everything, my darling. Find the few small truths that let you build the rest — that is one of the great joys of learning. Memorize the molecules and you have to carry all of them. Learn the atoms, and you can build any of them.
+So do not try to carry everything, my darling. Find the few small truths that let you build the rest. That is one of the great joys of learning. Memorize the molecules and you have to carry all of them. Learn the atoms, and you can build any of them.
