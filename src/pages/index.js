@@ -19,17 +19,8 @@ const BlogIndexPage = ({ data }) => {
   const allMdx = data.allMdx || { nodes: [] };
   const allMarkdownRemark = data.allMarkdownRemark || { nodes: [] };
 
-  // Convert markdown nodes to the same structure as MDX nodes
-  const markdownNodes = allMarkdownRemark.nodes.map(node => ({
-    ...node,
-    frontmatter: {
-      ...node.frontmatter,
-      estimatedReadingTime: node.frontmatter.estimatedReadingTime || 5
-    }
-  }));
-
-  // Combine both types of nodes
-  const allNodes = [...allMdx.nodes, ...markdownNodes];
+  // Combine both types of nodes (estimatedReadingTime is a node-level field)
+  const allNodes = [...allMdx.nodes, ...allMarkdownRemark.nodes];
 
   // Sort by date
   const sortedNodes = allNodes.sort((a, b) => {
@@ -146,7 +137,7 @@ const BlogIndexPage = ({ data }) => {
               </h1>
               <p>
                 {formatPostDate(post.frontmatter.date)}
-                {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
+                {` • ${formatReadingTime(post.estimatedReadingTime || 5)}`}
               </p>
               <Pills items={post.frontmatter.categories} />
               <p>{post.frontmatter.description}</p>
@@ -170,12 +161,12 @@ export const query = graphql`
         fields {
           slug
         }
+        estimatedReadingTime
         frontmatter {
           title
           description
           categories
           date(formatString: "MMMM DD, YYYY")
-          estimatedReadingTime
         }
       }
     }
@@ -187,12 +178,12 @@ export const query = graphql`
         fields {
           slug
         }
+        estimatedReadingTime
         frontmatter {
           title
           description
           categories
           date(formatString: "MMMM DD, YYYY")
-          estimatedReadingTime
         }
       }
     }

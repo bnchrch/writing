@@ -40,7 +40,7 @@ export default function PageTemplate({ data, children, pageContext }) {
           },
           {
             name: 'twitter:data1',
-            content: `${post.frontmatter.estimatedReadingTime || '5'} min read`,
+            content: `${post.estimatedReadingTime || '5'} min read`,
           },
         ]}
       />
@@ -50,7 +50,7 @@ export default function PageTemplate({ data, children, pageContext }) {
             <h1>{post.frontmatter.title}</h1>
             <p>
               {formatPostDate(post.frontmatter.date)}
-              {` • ${formatReadingTime(post.frontmatter.estimatedReadingTime || 5)}`}
+              {` • ${formatReadingTime(post.estimatedReadingTime || 5)}`}
             </p>
             <Pills items={post.frontmatter.categories} />
           </header>
@@ -138,6 +138,7 @@ export const pageQuery = graphql`
     }
     mdx(id: { eq: $id }) {
       id
+      estimatedReadingTime
       fields {
         slug
       }
@@ -147,12 +148,12 @@ export const pageQuery = graphql`
         description
         categories
         canonicalLink
-        estimatedReadingTime
       }
     }
     markdownRemark(id: { eq: $id }) {
       id
       html
+      estimatedReadingTime
       fields {
         slug
       }
@@ -162,7 +163,6 @@ export const pageQuery = graphql`
         description
         categories
         canonicalLink
-        estimatedReadingTime
       }
     }
   }

@@ -29,10 +29,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Mdx implements Node {
       frontmatter: MdxFrontmatter
       fields: Fields
+      estimatedReadingTime: Int
     }
     type MarkdownRemark implements Node {
       frontmatter: MarkdownRemarkFrontmatter
       fields: Fields
+      estimatedReadingTime: Int
     }
     type Fields {
       slug: String
@@ -45,7 +47,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       published: Boolean
       categories: [String]
       canonicalLink: String
-      estimatedReadingTime: Int
     }
     type MarkdownRemarkFrontmatter {
       title: String!
@@ -54,48 +55,34 @@ exports.createSchemaCustomization = ({ actions }) => {
       published: Boolean
       categories: [String]
       canonicalLink: String
-      estimatedReadingTime: Int
     }
   `
   createTypes(typeDefs)
 }
 
 exports.createResolvers = ({ createResolvers }) => {
-  const resolvers = {
-    MdxFrontmatter: {
-      estimatedReadingTime: {
-        type: 'Int',
-        resolve: (source, args, context, info) => {
-          const nodeId = info.parentNode && info.parentNode.id;
-          if (!nodeId) return 5; // Default reading time
+  // Resolve at the node level, where `source` IS the Mdx/MarkdownRemark node.
+  // MarkdownRemark exposes its source as `rawMarkdownBody` (NOT `rawBody`);
+  // MDX keeps the raw source on `internal.content`.
+  const estimateReadingTime = node => {
+    const body =
+      node.rawMarkdownBody ||
+      (node.internal && node.internal.content) ||
+      node.body ||
+      '';
 
-          const node = context.nodeModel.getNodeById({ id: nodeId });
-          if (!node) return 5; // Default reading time
+    const readingStats = readingTime(body);
+    return Math.max(1, Math.round(readingStats.minutes));
+  };
 
-          const { rawBody } = node;
-          const readingStats = readingTime(rawBody || '');
-          return Math.round(readingStats.minutes);
-        },
-      },
+  createResolvers({
+    Mdx: {
+      estimatedReadingTime: { type: 'Int', resolve: source => estimateReadingTime(source) },
     },
-    MarkdownRemarkFrontmatter: {
-      estimatedReadingTime: {
-        type: 'Int',
-        resolve: (source, args, context, info) => {
-          const nodeId = info.parentNode && info.parentNode.id;
-          if (!nodeId) return 5; // Default reading time
-
-          const node = context.nodeModel.getNodeById({ id: nodeId });
-          if (!node) return 5; // Default reading time
-
-          const { rawBody } = node;
-          const readingStats = readingTime(rawBody || '');
-          return Math.round(readingStats.minutes);
-        },
-      },
+    MarkdownRemark: {
+      estimatedReadingTime: { type: 'Int', resolve: source => estimateReadingTime(source) },
     },
-  }
-  createResolvers(resolvers)
+  })
 }
 
 exports.createPages = ({ graphql, actions, reporter, pathPrefix }) => {
