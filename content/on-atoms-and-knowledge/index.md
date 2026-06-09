@@ -31,11 +31,13 @@ I'll come back to this one. But let me start somewhere you have already been, wi
 
 ## What I mean by atoms
 
-You can't memorize how to say every word. There are too many of them, and people make up new ones all the time. So nobody tried. Instead, someone taught you the sounds of just twenty-six letters. And the first time you saw a word you had never seen before, something like *galumphing* or *persimmon*, you could already say it out loud.
+You can't memorize how to say every word. The Oxford English Dictionary lists more than 170,000 of them in current use, and people make up new ones all the time. So nobody tried to hand you all of them. Instead, someone taught you the sounds of just twenty-six letters. And the first time you saw a word you had never seen before, something like *galumphing* or *persimmon*, you could already say it out loud.
 
 Nobody taught you that word. You built it yourself, out of letters.
 
-That is an **atom of knowledge**. The letters are the atoms. The words are the molecules. You learned twenty-six small things instead of a million big ones, and in return you can say any word there is, including the ones nobody has invented yet.
+That is an **atom of knowledge**. The letters are the atoms. The words are the molecules. Twenty-six is a lot easier to remember than 170,000, and that is the whole bargain: you learned twenty-six small things instead of memorizing every word one at a time, and in return you can say any word there is, including the ones nobody has invented yet.
+
+And those same twenty-six letters do not stop at English. The Latin alphabet is the most widely used writing system on Earth, used to write more than 3,000 other languages. So the moment you could sound out letters, you could already begin to sound out Spanish, or Italian, or Swahili, even words you have never heard. The atoms you learned for one language carried straight into the others. That is the first thing to notice about atoms: the good ones travel.
 
 More generally, an atom is a small truth that helps you derive bigger truths. Atoms matter because they reduce the number of things you have to simply "remember."
 
