@@ -11,8 +11,11 @@
  *   </div>
  *
  * Without JS the panels simply stack (a fine, fully-readable fallback). This
- * function builds a tablist, hides the inactive panels, and wires up click +
- * arrow-key switching. It is idempotent so it can run again on route changes.
+ * function gives the container a subtle background, a tab bar at the top AND
+ * the bottom, hides the inactive panels, and wires up click + arrow-key
+ * switching. The bottom bar additionally scrolls back to the top of the
+ * section when used, so a reader who reaches the end of a long panel can pick
+ * the next one and jump straight to it. Idempotent across route changes.
  *
  * @param {ParentNode} root - element/document to search within (e.g. the
  *   markdown content container).
@@ -36,67 +39,92 @@ export function enhanceTabs(root) {
     let activeIndex = panels.findIndex((p) => p.dataset.label === defaultLabel)
     if (activeIndex < 0) activeIndex = 0
 
-    // Build the tablist.
-    const bar = document.createElement('div')
-    bar.className = 'atom-tabs__bar'
-    bar.setAttribute('role', 'tablist')
-
-    const buttons = panels.map((panel, i) => {
+    // Give each panel its identity once (shared by both bars).
+    panels.forEach((panel, i) => {
       const label = panel.dataset.label || `Tab ${i + 1}`
-      const tabId = `atom-tab-${i}-${Math.abs(hashLabel(label))}`
-      const panelId = `${tabId}-panel`
-
-      const button = document.createElement('button')
-      button.type = 'button'
-      button.className = 'atom-tab-button'
-      button.textContent = label
-      button.id = tabId
-      button.setAttribute('role', 'tab')
-      button.setAttribute('aria-controls', panelId)
-
-      panel.id = panelId
+      panel.id = `atom-panel-${Math.abs(hashLabel(label))}-${i}`
       panel.setAttribute('role', 'tabpanel')
-      panel.setAttribute('aria-labelledby', tabId)
-
-      button.addEventListener('click', () => activate(i))
-      button.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          e.preventDefault()
-          activate((i + 1) % panels.length, true)
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          e.preventDefault()
-          activate((i - 1 + panels.length) % panels.length, true)
-        } else if (e.key === 'Home') {
-          e.preventDefault()
-          activate(0, true)
-        } else if (e.key === 'End') {
-          e.preventDefault()
-          activate(panels.length - 1, true)
-        }
-      })
-
-      bar.appendChild(button)
-      return button
     })
 
-    function activate(index, focus) {
-      panels.forEach((panel, i) => {
-        const selected = i === index
-        if (selected) {
-          panel.removeAttribute('hidden')
-        } else {
-          panel.setAttribute('hidden', '')
-        }
-        buttons[i].setAttribute('aria-selected', selected ? 'true' : 'false')
-        // Roving tabindex: only the active tab is in the tab order.
-        buttons[i].tabIndex = selected ? 0 : -1
-        buttons[i].classList.toggle('atom-tab-button--active', selected)
+    const bars = [] // { buttons, position }
+
+    function buildBar(position) {
+      const bar = document.createElement('div')
+      bar.className = `atom-tabs__bar atom-tabs__bar--${position}`
+      bar.setAttribute('role', 'tablist')
+
+      const buttons = panels.map((panel, i) => {
+        const label = panel.dataset.label || `Tab ${i + 1}`
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.className = 'atom-tab-button'
+        button.textContent = label
+        button.id = `atom-tab-${position}-${Math.abs(hashLabel(label))}-${i}`
+        button.setAttribute('role', 'tab')
+        button.setAttribute('aria-controls', panel.id)
+
+        // Label the panel from the top bar's button.
+        if (position === 'top') panel.setAttribute('aria-labelledby', button.id)
+
+        // Clicking the bottom bar jumps back up to the top of the section.
+        button.addEventListener('click', () =>
+          activate(i, { scrollToTop: position === 'bottom' })
+        )
+        button.addEventListener('keydown', (e) => {
+          const last = panels.length - 1
+          let next
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % panels.length
+          else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (i - 1 + panels.length) % panels.length
+          else if (e.key === 'Home') next = 0
+          else if (e.key === 'End') next = last
+          else return
+          e.preventDefault()
+          activate(next, { focusPosition: position })
+        })
+
+        bar.appendChild(button)
+        return button
       })
-      activeIndex = index
-      if (focus) buttons[index].focus()
+
+      bars.push({ buttons, position })
+      return bar
     }
 
-    container.insertBefore(bar, container.firstChild)
+    function activate(index, opts = {}) {
+      panels.forEach((panel, i) => {
+        if (i === index) panel.removeAttribute('hidden')
+        else panel.setAttribute('hidden', '')
+      })
+      bars.forEach(({ buttons }) => {
+        buttons.forEach((button, i) => {
+          const selected = i === index
+          button.setAttribute('aria-selected', selected ? 'true' : 'false')
+          // Roving tabindex: only the active tab is in the tab order.
+          button.tabIndex = selected ? 0 : -1
+          button.classList.toggle('atom-tab-button--active', selected)
+        })
+      })
+      activeIndex = index
+
+      if (opts.scrollToTop) {
+        const reduce =
+          typeof window.matchMedia === 'function' &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        container.scrollIntoView({
+          behavior: reduce ? 'auto' : 'smooth',
+          block: 'start',
+        })
+      }
+      if (opts.focusPosition) {
+        const set = bars.find((b) => b.position === opts.focusPosition)
+        if (set) set.buttons[index].focus()
+      }
+    }
+
+    const topBar = buildBar('top')
+    const bottomBar = buildBar('bottom')
+    container.insertBefore(topBar, container.firstChild)
+    container.appendChild(bottomBar)
     activate(activeIndex)
   })
 }

@@ -68,23 +68,38 @@
 
 /* ---- Tabbed example sections (.atom-tabs) ---------------------------------
    Authored as stacked <div class="atom-tab"> panels in Markdown. Without JS
-   they simply stack (full fallback); enhanceTabs() adds a tab bar and the
-   `--enhanced` class, after which only the active panel shows. */
+   they simply stack (full fallback); enhanceTabs() adds tab bars at the top
+   and bottom plus the `--enhanced` class, after which only the active panel
+   shows and the section gets a subtle contained background. */
 
 .atom-tabs {
   margin: 2.5rem 0;
+}
+
+/* Once enhanced, present the section as a subtle, self-contained card. */
+.atom-tabs--enhanced {
+  background-color: #f7f7f5;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem 1rem;
 }
 
 .atom-tabs__bar {
   display: flex;
   flex-wrap: nowrap;
   gap: 0.25rem;
-  margin-bottom: 1.75rem;
-  padding-bottom: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   overflow-x: auto;
-  /* allow the active underline to sit on the container border */
   scrollbar-width: thin;
+}
+
+.atom-tabs__bar--top {
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.atom-tabs__bar--bottom {
+  margin-top: 1.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .atom-tab-button {
@@ -104,6 +119,14 @@
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Bottom bar mirrors the top: indicator sits on the upper edge. */
+.atom-tabs__bar--bottom .atom-tab-button {
+  border-bottom: none;
+  border-top: 2px solid transparent;
+  margin-bottom: 0;
+  margin-top: -1px;
+}
+
 .atom-tab-button:hover {
   color: #222;
 }
@@ -112,6 +135,11 @@
   color: #111;
   font-weight: 600;
   border-bottom-color: #111;
+}
+
+.atom-tabs__bar--bottom .atom-tab-button--active {
+  border-bottom-color: transparent;
+  border-top-color: #111;
 }
 
 .atom-tab-button:focus-visible {
@@ -139,6 +167,10 @@
 @media only screen and (max-width: 600px) {
   .atom-tabs {
     margin: 2rem 0;
+  }
+
+  .atom-tabs--enhanced {
+    padding: 0.5rem 1rem 0.75rem;
   }
 
   .atom-tab-button {
