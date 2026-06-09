@@ -50,7 +50,21 @@ In physics, a few atoms might be:
 
 On their own, each atom is useful. But when you combine them, they become molecules of understanding.
 
-## Molecule 1: height becomes speed
+## The same trick, everywhere
+
+The reason I love atoms so much is that this move — small truths combining into bigger ones — is not a physics thing. It shows up almost everywhere. So as you grow up, I hope you do not worry too much about whether you are a "math person," a "science person," a "creative person," or a "people person." Those categories are mostly fake. What matters is learning how to find the atoms in whatever world you are drawn to.
+
+Below are a few of those worlds. Start with the one you love most — but peek at the others too, because the *pattern* is the point: different costumes, same atoms.
+
+<div class="atom-tabs" data-default="Physics">
+
+<div class="atom-tab" data-label="Physics">
+
+## If you love physics
+
+Let me start with the world that taught me all of this.
+
+### Molecule 1: height becomes speed
 
 Take a roller coaster rolling down a hill, a skier going down a slope, a ball falling from a window, or a pendulum swinging downward. At first those look like different problems. Say you just want the speed at the bottom, and you have forgotten there is an atom underneath.
 
@@ -102,7 +116,7 @@ Same answer. A much shorter road. And this time you never needed the shape of th
 
 That is what an atom of knowledge does. It helps you see the thing that matters sooner. This is not a trick I invented, by the way. It is the whole reason physicists invented energy methods: a way to skip the moment-by-moment forces and ask only what the system had at the start and where it went by the end.
 
-## Molecule 2: spring becomes speed
+### Molecule 2: spring becomes speed
 
 Another one: a spring launching a toy car.
 
@@ -139,7 +153,7 @@ I do not need to know every tiny moment. I just need to know what energy was sto
 
 Spring energy became motion. Done.
 
-## Same truth, different costume
+### Same truth, different costume
 
 A roller coaster. A falling ball. A skier. A pendulum. A ramp. They look like different problems, but often they are the same molecule wearing different costumes. The useful questions are always:
 
@@ -154,9 +168,9 @@ That was the breakthrough. Not that I had learned a trick, but that I had learne
 
 It feels like carrying less.
 
-## This is not just physics
+</div>
 
-This is true almost everywhere. So as you grow up, I hope you do not worry too much about whether you are a "math person," a "science person," a "creative person," or a "people person." Those categories are mostly fake. What matters is learning how to find the atoms in whatever world you are drawn to.
+<div class="atom-tab" data-label="Design">
 
 ## If you love design
 
@@ -178,6 +192,10 @@ Notice how many of those trace back to a handful of real principles. The way you
 Once you understand the atoms, design stops being **"make it pretty"** and becomes a set of questions: What should someone notice first? What should they feel? What belongs together? What needs breathing room? What pattern should repeat, and what should stand apart?
 
 Posters, rooms, paintings, apps, books, buildings. Different molecules, same atoms.
+
+</div>
+
+<div class="atom-tab" data-label="Programming">
 
 ## If you love programming
 
@@ -218,6 +236,10 @@ Tiny example. Huge idea. Computer scientists have real names for both halves. A 
 | Game | Player, world, rules | Movement, damage, progress |
 
 Once you see that, programming stops being a giant pile of languages, frameworks, libraries, and strange punctuation. It becomes a few questions: What is the state? How should it change? What rules control the change? What happens next?
+
+</div>
+
+<div class="atom-tab" data-label="People">
 
 ## If you love people
 
@@ -277,6 +299,10 @@ Again and again, the work is the same:
 
 That is not manipulation. That is care with eyes open.
 
+</div>
+
+<div class="atom-tab" data-label="Biology">
+
 ## If you love biology
 
 A living thing is not just a pile of parts. It is a system trying to stay alive. The atoms might be:
@@ -300,6 +326,10 @@ Each of those is a real, named idea. Energy obeys the laws of thermodynamics, th
 | Babies cry before they have words | Adaptation + communication |
 
 Once you understand those atoms, biology becomes less like memorizing endless names and more like asking better questions. Different organisms, same atoms.
+
+</div>
+
+</div>
 
 ## The lesson underneath the lesson
 

@@ -65,3 +65,84 @@
     gap: 1.25rem;
   }
 }
+
+/* ---- Tabbed example sections (.atom-tabs) ---------------------------------
+   Authored as stacked <div class="atom-tab"> panels in Markdown. Without JS
+   they simply stack (full fallback); enhanceTabs() adds a tab bar and the
+   `--enhanced` class, after which only the active panel shows. */
+
+.atom-tabs {
+  margin: 2.5rem 0;
+}
+
+.atom-tabs__bar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  /* allow the active underline to sit on the container border */
+  scrollbar-width: thin;
+}
+
+.atom-tab-button {
+  flex: 0 0 auto;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.atom-tab-button:hover {
+  color: #222;
+}
+
+.atom-tab-button--active {
+  color: #111;
+  font-weight: 600;
+  border-bottom-color: #111;
+}
+
+.atom-tab-button:focus-visible {
+  outline: 2px solid #4d5bff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Keep first/last heading inside a panel from adding awkward extra space */
+.atom-tab > :first-child {
+  margin-top: 0;
+}
+
+/* Only hide inactive panels once enhanced; no-JS readers see them all. */
+.atom-tabs--enhanced .atom-tab[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atom-tab-button {
+    transition: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .atom-tabs {
+    margin: 2rem 0;
+  }
+
+  .atom-tab-button {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}

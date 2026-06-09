@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 
@@ -7,6 +7,7 @@ import Pills from '../components/pills'
 import Bio from '../components/bio'
 import Embed from '../components/embed'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
+import { enhanceTabs } from '../utils/tabs'
 
 import './blog-post.css'
 
@@ -25,6 +26,13 @@ export default function PageTemplate({ data, children, pageContext }) {
 
   const { previous, next } = pageContext
   const publicUrl = `${site.siteMetadata.siteUrl}${post.fields.slug}`
+
+  // Progressively enhance any `.atom-tabs` blocks in the rendered post into a
+  // tabbed UI. No-ops on posts that don't use them.
+  const contentRef = useRef(null)
+  useEffect(() => {
+    if (contentRef.current) enhanceTabs(contentRef.current)
+  }, [])
 
   return (
     <div>
@@ -45,7 +53,7 @@ export default function PageTemplate({ data, children, pageContext }) {
         ]}
       />
       <section className="center blog">
-        <article className="container small">
+        <article className="container small" ref={contentRef}>
           <header>
             <h1>{post.frontmatter.title}</h1>
             <p>
@@ -56,11 +64,7 @@ export default function PageTemplate({ data, children, pageContext }) {
           </header>
 
           {/* Render MDX content if available */}
-          {mdx && (
-            <MDXProvider components={shortcodes}>
-              {children}
-            </MDXProvider>
-          )}
+          {mdx && <MDXProvider components={shortcodes}>{children}</MDXProvider>}
 
           {/* Render MarkdownRemark content if available */}
           {markdownRemark && (
