@@ -138,6 +138,7 @@
 /* In "For them" mode, a hovered title sprouts a cycling emoji (set in JS) */
 .hover-emoji {
   display: inline-block;
+  margin-left: 0.25em;
   text-shadow: none;
   animation: emoji-pop 0.2s ease;
 }
