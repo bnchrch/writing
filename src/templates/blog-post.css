@@ -40,3 +40,28 @@
 .blog footer small a {
   font-size: 0.875rem;
 }
+
+/* prev / next navigation links */
+.blog footer ul {
+  gap: 1rem;
+}
+
+.blog footer ul li {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog header {
+    margin-top: 1.5rem;
+  }
+
+  .blog footer {
+    margin-top: 2rem;
+  }
+
+  /* Stack prev/next links so long titles don't collide */
+  .blog footer ul {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}

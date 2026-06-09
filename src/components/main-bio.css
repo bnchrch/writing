@@ -65,6 +65,13 @@
   margin-right: 0;
 }
 
+.horizontal-links > li > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+}
+
 .horizontal-links svg {
   width: 16px;
   height: 16px;
@@ -125,8 +132,14 @@
 }
 
 @media only screen and (max-width: 768px) {
+  /* The homepage sidebar already supplies horizontal padding on mobile,
+     so drop it here to avoid a cramped, doubly-indented bio. */
   .main-bio-container {
-    padding: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .for-them-message {
+    font-size: 1.1rem;
   }
 }
 

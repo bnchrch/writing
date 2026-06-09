@@ -186,3 +186,23 @@
     border-left: none;
   }
 }
+
+@media (max-width: 480px) {
+  .homepage-sidebar,
+  .homepage-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .blog-listing {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .blog-listing h1 {
+    font-size: 1.25rem;
+  }
+
+  .filter-bar {
+    margin-bottom: 1.5rem;
+  }
+}

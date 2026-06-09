@@ -74,6 +74,24 @@ a {
   line-height: 1.65;
 }
 
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+code {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 a {
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -119,9 +137,11 @@ code {
 }
 
 pre {
-  overflow: scroll;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 1.25rem;
   white-space: pre-wrap;
+  word-wrap: break-word;
   border-radius: 3px;
 }
 
@@ -165,6 +185,7 @@ mark,
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -209,4 +230,43 @@ figcaption {
   letter-spacing: 0;
   text-align: center;
   font-size: 0.875rem;
+}
+
+/* ---- Mobile / small screens ---- */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  blockquote {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 1.25rem 0;
+    padding-left: 1rem;
+  }
+
+  pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Wide tables become horizontally scrollable instead of overflowing
+     the viewport */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  thead th,
+  tbody td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Keep heading anchor links from pushing content off-screen */
+  .anchor {
+    left: -22px;
+    width: 22px;
+  }
 }
