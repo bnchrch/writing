@@ -7,6 +7,7 @@ import Pills from '../components/pills'
 import Bio from '../components/bio'
 import Embed from '../components/embed'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
+import { enhanceQuoteDecks } from '../utils/quote-decks'
 import { enhanceTabs } from '../utils/tabs'
 
 import './blog-post.css'
@@ -27,11 +28,14 @@ export default function PageTemplate({ data, children, pageContext }) {
   const { previous, next } = pageContext
   const publicUrl = `${site.siteMetadata.siteUrl}${post.fields.slug}`
 
-  // Progressively enhance any `.atom-tabs` blocks in the rendered post into a
-  // tabbed UI. No-ops on posts that don't use them.
+  // Progressively enhance interactive blocks in rendered posts. Both helpers
+  // no-op on posts that do not use their corresponding authoring pattern.
   const contentRef = useRef(null)
   useEffect(() => {
-    if (contentRef.current) enhanceTabs(contentRef.current)
+    if (contentRef.current) {
+      enhanceTabs(contentRef.current)
+      enhanceQuoteDecks(contentRef.current)
+    }
   }, [])
 
   return (
