@@ -9,19 +9,17 @@ categories:
 published: true
 ---
 
-Ah, darling, I'm back, with more nonsense, more love, and at this moment in time the melancholy-touched excitement that only comes with a parent going off solo to a party where he will pretend he's still 20, knowing his body and heart will remind him in the morning he's 34 with a daughter and wife he misses back home.
+Morning Darling,
 
-Anywho, that backdrop is completely irrelevant. Just a time capsule for fun as I sit here typing from a deserted airport lounge.
+I'm back, with more nonsense, more love, and the melancholy-touched excitement of a parent going solo to a party where he'll pretend he's 20, knowing his body and heart will remind him tomorrow that he's 34, with a daughter and wife he misses at home.
 
-What I'm really here for is to give you a warning. There's a trap ahead, for you, for me, and our own human wiring laid it.
+I'm writing from a deserted airport lounge, which feels worth preserving as a time capsule.
 
-What I want to talk about is labels and tribes.
+But I'm really here to warn you about a trap our own wiring laid: labels and tribes.
 
-Now, maybe by the time you're reading this you're starting to grasp just how strong our own tendencies are to gravitate towards tribalism. Our brains love shortcuts, they love putting things into buckets, they love an us vs them.
+Our brains love shortcuts, buckets, and an us versus them. We underestimate how powerfully a label can shape someone and overestimate our freedom from it. But show, don't tell.
 
-Simply put: we under-estimate the power of labelling something or someone, and over-estimate our own free will. But, show don't tell, right?
-
-Below is a dump of examples that show just how often we humans will choose a label over ourselves, over our partners, over reason.
+Here are a few examples of humans choosing the label over themselves, their partners, and reason.
 
 ## Labels accidentally shape our abilities
 
@@ -76,29 +74,15 @@ Below is a dump of examples that show just how often we humans will choose a lab
 
 ---
 
-But why am I taking the time to write about this? And why is it so important?
+So why does this matter?
 
-Life is many things. Beautiful, wondrous, inspiring. And like I've said before, its main goal is simple: be happy by your own measure.
+Life is beautiful, wondrous and inspiring, and its main goal is simple: be happy by your own measure. But it also changes constantly, so you must stay flexible enough to change with it.
 
-But life is also an active and ever-changing battlefield you must stay on top of.
+A label asks you to stand still. Call yourself a jock and you close off the nerd. Call yourself a nerd and you do the reverse. Call yourself bad at maths, a lawyer, cis, bi, autistic, ADHD, communist or capitalist, and useful shorthand can harden into a cage.
 
-One of the best strategies you can enact in war is to be flexible, to be open, to see the world and yourself in it in the moment, and change with it.
+Reality is more fluid. You can be smart and athletic, a programmer and social, unable to focus today and full of solutions tomorrow.
 
-And many times adhering to a label, an identity, is to stand still. It's to commit to not change, and it leaves you a sitting duck.
-
-You label yourself a jock, you close the door to exploring your nerdy side.
-
-You label yourself a nerd, and you create the opposite fate.
-
-Label yourself or others bad at maths, a lawyer, cis, bi, autistic, ADHD, communist, capitalist, and you walk into a cage of your own making.
-
-Once you take on these identities they are very hard to shed, and to be frank, you get nothing back in return.
-
-Identities and labels are just shorthand for how we humans want the world to be, because it's easier to reason about, but in reality it's so much more fluid than that.
-
-You can be both smart and athletic. You can be a programmer and social. You can find it hard to pay attention today and find a solution tomorrow.
-
-The right approach, in your father's eyes, is that if you must label yourself, label yourself unlabellable. Flexible. Take on the identity of you, and say instead "today, I find rugby/programming/sailing interesting, I want to improve, I want to explore," and you'll be free to be whoever you want to be today or tomorrow.
+So if you must label yourself, label yourself unlabellable. Say: "Today I find rugby, programming or sailing interesting. I want to improve. I want to explore." Leave yourself free to become someone different tomorrow.
 
 One day someone will hand you a noun. A teacher, a friend, a doctor, a stranger on the internet, most likely me. Take it if it's useful. Try it on, wear it for a while, see what it does. Just notice that it's a coat and not a skin.
 
