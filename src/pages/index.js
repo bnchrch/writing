@@ -10,6 +10,7 @@ import { formatPostDate, formatReadingTime } from '../utils/dates'
 import './blog-listing.css'
 
 const FOR_THEM = 'For them'
+const POEMS = 'Poems'
 const FILTER_PARAM = 'filter'
 const FOR_THEM_VALUE = 'for-them'
 const FOR_THEM_EMOJIS = ['♥️', '🌈', '🦄', '🏎️', '🐰', '🐈', '🐕', '🎈', '🛝', '🫧']
@@ -29,7 +30,7 @@ const BlogIndexPage = ({ data }) => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Toggle: when on, show only "For them" posts. Backed by a ?filter=for-them
+  // Toggle: when on, show "For them" posts and poems. Backed by a ?filter=for-them
   // query param so the state is shareable and survives reloads.
   const [forThemOnly, setForThemOnly] = useState(false);
 
@@ -55,9 +56,13 @@ const BlogIndexPage = ({ data }) => {
     });
   };
 
-  const visibleNodes = forThemOnly
-    ? sortedNodes.filter(post => (post.frontmatter.categories || []).includes(FOR_THEM))
-    : sortedNodes;
+  const visibleNodes = sortedNodes.filter(post => {
+    const categories = post.frontmatter.categories || [];
+    const isPoem = categories.includes(POEMS);
+    return forThemOnly
+      ? categories.includes(FOR_THEM) || isPoem
+      : !isPoem;
+  });
 
   // "For them" delight: a random emoji cursor (per page load) plus a hovered
   // title that appends the next emoji in the cycle.
@@ -115,7 +120,7 @@ const BlogIndexPage = ({ data }) => {
               className={`filter-toggle ${forThemOnly ? 'filter-toggle--active' : ''}`}
               onClick={toggleForThem}
               aria-pressed={forThemOnly}
-              aria-label="Show only letters for them"
+              aria-label="Show only letters and poems for them"
               title="For them"
             >
               <span className="emoji" role="img" aria-hidden="true">👧</span>
