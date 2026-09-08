@@ -1,5 +1,5 @@
 ---
-title: 'Yet, Embers Remain'
+title: "Another's Heartbeat"
 description: 'Once full, once bright. Yet, embers remain.'
 date: '2024-09-23'
 categories:

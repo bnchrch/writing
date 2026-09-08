@@ -60,3 +60,7 @@ doe eyed
 A dream  
 Staring yet,  
 lovingly back.
+
+---
+
+*Written for the wedding ceremony of two friends, Beth and Trevor.*

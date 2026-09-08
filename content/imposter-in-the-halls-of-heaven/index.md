@@ -1,6 +1,6 @@
 ---
 title: 'Imposter in the halls of heaven'
-description: 'For I will bask In this warm light For it is a gift, No matter the length.'
+description: 'For I will bask In this warm light it is a gift, No matter the length.'
 date: '2026-06-15'
 categories:
   - Poems
@@ -21,5 +21,5 @@ cruel blaze
 Neither matter,  
 For I will bask  
 In this warm light  
-For it is a gift,  
+it is a gift,  
 No matter the length.

@@ -20,15 +20,17 @@ I can’t wait to meet you.
 Packing, running, wristbands, push  
 I can’t wait to meet you.
 
-A new, soft and full cry,  
-welcome in, little darling  
-I can’t wait to meet you.
+a new soft and full cry  
+welcome in little darling
 
-Our eyes meet, a tiny belly laugh from behind your beautiful toothless smile  
-I can’t wait to meet you.
+our eyes meet  
+a tiny belly laugh from behind your beautiful toothless smile
 
-First roll, first crawl, steps, running.  
-I can’t wait to meet you
+first roll  
+first crawl  
+steps  
+running  
+i can't wait to meet you
 
 Daycare, tears, new friends, first enemies, stories from books, stories from you  
 I can’t wait to meet you.
