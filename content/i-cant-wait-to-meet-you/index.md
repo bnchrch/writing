@@ -1,49 +1,59 @@
 ---
 title: 'I Can’t Wait to Meet You'
-description: 'For every day. I miss you, And I can’t wait To meet Each and everyone Of you.'
+description: 'I miss you. And I can’t wait to meet each and every one of you.'
 date: '2026-06-23'
 categories:
   - Poems
 published: true
 ---
 
-Normal day,  
-Big Problems, noise, run chase.  
-A lovingly, fearful, excited surprise, whispered.  
-Small problems.  
+An ordinary day.  
+Big problems.  
+Noise, rush, chase.  
+Then she whispers.  
+Small problems.
+
 I can’t wait to meet you.
 
 Big kick, first felt, in my hand  
-At my heart  
+at my heart.  
 I can’t wait to meet you.
 
-Packing, running, wristbands, push  
+Packing, running, wristbands, push.  
 I can’t wait to meet you.
 
-a new soft and full cry  
-welcome in little darling
+A new soft and full cry.  
+Welcome in, little darling.
 
-our eyes meet  
-a tiny belly laugh from behind your beautiful toothless smile
+Our eyes meet.  
+A belly laugh  
+behind your toothless smile.
 
-first roll  
+First roll  
 first crawl  
 steps  
-running  
-i can't wait to meet you
+running.
 
-Daycare, tears, new friends, first enemies, stories from books, stories from you  
 I can’t wait to meet you.
 
-From our embrace.  
-You leap into the world, alone, to find yourself,  
-I wait patiently home  
-Worried  
-Inspired and excited.  
-For who comes next  
-For every day.  
-I miss you,  
-And I can’t wait  
-To meet  
-Each and everyone  
-Of you.
+Daycare tears  
+new friends  
+first enemies  
+stories from books  
+stories from you.
+
+I can’t wait to meet you.
+
+From our embrace  
+you leap into the world  
+to find  
+yourself.
+
+I wait at home,  
+wondering who  
+you’ll bring back.
+
+I miss you.  
+And I can’t wait to meet  
+each and every one  
+of you.
