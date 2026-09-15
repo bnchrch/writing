@@ -22,13 +22,13 @@ The patience of her roots
 In soil,  
 unkind.
 
-My Iron rose
-
+My Iron rose  
 Tall, stemmed.  
+Standing  
 in a neighbourhood of fallen petals.
 
 Her patina,  
-shines beautifully,  
+shinning its own eternal beauty,  
 through cloud laden light.
 
 ---
